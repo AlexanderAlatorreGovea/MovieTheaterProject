@@ -1,0 +1,139 @@
+/*********************SIDE BAR*******************************/
+
+.main-nav{
+  z-index: 2000;
+  background: #000;
+  @media screen  and (min-width: 769px) {
+    top: 0;
+    right: auto;
+    z-index: 2000;
+    width: 4rem;
+    position: fixed;
+    background: #000;
+    height: 100vh;  
+    }
+  @media screen and (min-width: 0px) and (max-width: 768px) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    height: 4rem;
+    background-color: #000;
+  }
+    .main-nav__icons{
+      @media screen  and (min-width: 769px) {
+        align-items: center;
+        border-right: 1px solid #202124;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        margin-top: 97%;
+        list-style: none;
+        position: sticky;
+      }
+      @media screen and (min-width: 0px) and (max-width: 768px) {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        padding-top: 1rem;
+      }
+        .home{
+          color: #2196f3;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    .main-nav__icon{
+      @media screen  and (min-width: 769px) {
+        flex: 0 1 auto;
+        height: 10rem;
+      }
+    }
+    }
+}
+
+/*********************SEARCHBAR NAV*******************************/
+
+.pa  {
+    font-size: 1rem;
+    color: black;
+    border: 0;
+    outline: 0;
+    position: fixed;
+    left: 4.32rem;
+    top: 3.7rem;
+    transition: all .3s cubic-bezier(0, .52, 0, 1);
+    @media screen  and (min-width: 769px) {
+      left: 4.32rem;
+    }
+    @media screen and (min-width: 0px) and (max-width: 768px) {
+      left: 2rem;
+    }
+}
+  
+/*********************SEARCH BAR ANIMATIONS*******************************/
+
+
+  .hide{
+    transform: translate3d(-100vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+  }
+  
+  .show {
+    transform: translate3d(0vw, 0, 0);
+    transition: transform .4s cubic-bezier(0, .52, 0, 1);
+  }
+
+  .measure__ {
+      width: 250px;
+  }
+  
+  #name{
+      background-color: white;
+  }
+  
+  
+  input{
+      border-radius: 20px;
+      color: black;
+  }
+  
+/*********************SEARCH BAR COMPONENTS*******************************/
+
+  .main-nav-search-form {
+      position: relative;
+      
+
+      // main-nav-search-form__input
+      &__input {
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        outline: none;
+      }
+  
+      // main-nav-search-form__button
+      &__button {
+        background: #EB4E7A;
+        border: none;
+        border-radius: 86px;
+        cursor: pointer;
+        height: 36px;
+        left: 199px;
+        outline: none;
+        position: absolute;
+        top: 0;
+        width: 51px;
+        display: flex;
+        .svg {
+          fill: white;
+          align-content: center;
+          align-items: center;
+          padding-left: 11px;   
+        }
+      }
+    }
+
+
