@@ -22,11 +22,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        toggleSearchBar: false,
+        toggleSearchBar: true,
         movies: [],
         searchQuery: '',
         toDashBoard: false,
-        toggleSearchBar: true,
     }
     this.apiKey = '745fff882d6434c78ae4843ae559ef06';
  }
