@@ -76,7 +76,7 @@ class App extends React.Component {
                     </div>
                 </form>
             </div>
-        <nav className="main-nav">
+        <nav className="main-nav" style={{zIndex: '30000'}}>
           <ul className="main-nav__icons" style={{display: 'flex', listStyleType: 'none'}}>
             <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i className="white big home icon"></i></Link></li>
             <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/MovieDetailsDefault", state: {displaySingIn: this.state.displaySingIn }}}><i class="big white film icon"></i> </Link></li>
