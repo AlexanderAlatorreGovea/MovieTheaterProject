@@ -54,9 +54,6 @@ class PeopleModal extends React.Component {
   render() {
   const { onClose, backDrop, personImage, modalId, name, character } = this.props;
   const imgURL= 'http://image.tmdb.org/t/p/w780';
-  //console.log(this.props.itemId)
-  //console.log(this.props.person)
-  //console.log(this.props)
   return ReactDOM.createPortal(
         <div
         style={{

@@ -4,31 +4,45 @@
 
 
 .slider-divider{
-    margin-left: 60px;
+    margin-left: 60px; 
     margin-top: 5rem;
     width: 95%;
     @media screen and (min-width: 0px) and (max-width: 768px){
         margin-left: 0px;
         width: 100%
     }
+    .slick-slider {
+        @media screen  and (min-width: 1800px) {
+            padding-left: 9rem;
+        }
+    }
     .movie--category{
     padding-bottom: 45px;
     padding-left: 7px;
     display: flex;
+    @media screen  and (min-width: 1800px) {
+        padding-left: 11rem;
+    }
     }
     .movie--category__title{
-        font-family:  $primary-font;
+        font-family:  $primary-font; 
         font-size: 1.4rem;
         letter-spacing: 1px;
         color: $secondary-font-color;
+        @media screen  and (min-width: 1800px) {
+            font-size: 3rem;
+        }
     }
     .movie--category__explore{
-        font-family: $textFont;
+        font-family: $textFont; 
         font-size: .7rem;
         color: #2196f3;
         align-self: flex-end;
         padding-left: 10px;
         padding-bottom: 1px;
+        @media screen  and (min-width: 1800px) {
+            font-size: 1.4rem;
+        }
         &:hover{
             opacity: .6;
             cursor: pointer;
@@ -50,6 +64,9 @@
     @media only screen and (min-width: 1200px){
         padding-right: 15px;
     }
+    @media screen  and (min-width: 1800px) {
+        padding-right: 54px;
+    } 
     .movie-details--star__ratings{
        display: flex;
        flex-direction: row;
@@ -59,12 +76,16 @@
      .movie-details--home__rating-num{
         padding-left: 5px;
         color: white;
+        font-size: 1.3rem;
         @media only screen and (min-width: 1200px){
              font-size: 1.3rem;
          }
          @media only screen and (max-width: 900px){
              font-size: .9rem;
          }
+         @media only screen and (min-width: 1800px){
+            font-size: 3rem;
+        }
      }
      .stars-rating-header__item{
         height: 20px;
@@ -80,6 +101,9 @@
                 height: 10px;
             }
         }
+        @media screen  and (min-width: 1800px) {
+            height: 3rem;
+        } 
     }
 }
 
@@ -92,6 +116,10 @@
     -o-transition: all 2s ease; /* Opera */
     transition: all 2s ease;
     overflow: hidden;
+    #image {
+        width: 95%;
+        position: relative;
+    }
     img {
         opacity: .7;
         &:hover{
@@ -107,9 +135,7 @@
 }
 
 
-/*********************CAROUSEL COMPONENT WHICH BELONGS TO THIRD 
-***********************PARTY LIBRARY
-******************************/
+/*********************CAROUSEL****************************/
 
 .slick-prev {
     left: -1px;
@@ -133,7 +159,6 @@
     background: rgba(0,0,0,.5);
     outline: 0;
     height: 100%;
-
 }
 
 .alternative--arrow {
@@ -141,8 +166,13 @@
         background: rgba(0, 0, 0, 0.7);
         opacity: 1;
     }
+    @media screen  and (min-width: 1800px) {
+        height: 95%;
+        top: 20.5rem;
+        padding-left: 9rem;
+    }
 }
-
+ 
 
 .left--arrow__home{
     position: absolute;
@@ -150,6 +180,10 @@
     top: 45%;
     &:hover{
        transform: translate3d(0,1,0)
+    }
+    @media screen  and (min-width: 1800px) {
+        width: 6rem;
+        height: 4rem;
     }
 }
 
@@ -172,4 +206,6 @@ button{
 .slick-next:before {
     display: none;
  }
+
+ //////////////////Media Queries ///////////@at-root
 

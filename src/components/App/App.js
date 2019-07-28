@@ -69,18 +69,18 @@ class App extends React.Component {
                               searchQuery: this.state.searchQuery
                             }}}>
                           <button type="submit" className="main-nav-search-form__button">
-                            <i class="white large search icon svg"></i>
+                            <i id="search" class="white large search icon svg"></i>
                           </button>
                         </Link>
                     </div>
-                </form>
+                </form> 
             </div>
         <nav className="main-nav" style={{zIndex: '30000'}}>
           <ul className="main-nav__icons" style={{display: 'flex', listStyleType: 'none'}}>
-            <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i className="white big home icon"></i></Link></li>
-            <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/MovieDetailsDefault", state: {displaySingIn: this.state.displaySingIn }}}><i class="big white film icon"></i> </Link></li>
-            <li className="main-nav__icon" onClick={this.toggleSearchBar} ><i className="big white search icon"></i></li>
-            <li className="main-nav__icon" ><Link to="/SignIn"><i class="big white users icon"></i></Link></li>
+            <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i  id="home-icon"  className="white big home icon"></i></Link></li>
+            <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/MovieDetailsDefault", state: {displaySingIn: this.state.displaySingIn }}}><i id="home-icon" class="big white film icon"></i> </Link></li>
+            <li className="main-nav__icon" onClick={this.toggleSearchBar} ><i  id="home-icon" className="big white search icon"></i></li>
+            <li className="main-nav__icon" ><Link to="/SignIn"><i id="home-icon"  class="big white users icon"></i></Link></li>
           </ul>
         </nav>
       </Router>

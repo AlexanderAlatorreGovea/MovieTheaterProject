@@ -98,11 +98,9 @@ class HeroCarousel extends React.Component {
                   </span>
                 </div>
                   <Slider {...settings}>
-                     {  
+                     {   
                         this.props.nowPlayingMovies.map((movie, index)=> {
-
-                        const movieImages =   this.
-                        props.nowPlayingMovies.filter((i) => {return i = 10 })
+                        this.props.nowPlayingMovies.filter((i) => {return i = 10 })
                         if( index < 10) {
                         return(
                            <Link 
@@ -126,7 +124,7 @@ class HeroCarousel extends React.Component {
                                  </div>
                                </div>
                               <div className='image'>
-                                 <img style={{width: '95%', position: 'relative' }}
+                                 <img id="image" 
                                        key={ movie.id }  src={ imgURL + 'w300' + movie.poster_path  } 
                                        alt='movie poster'
                                  />

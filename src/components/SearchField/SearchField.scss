@@ -1,83 +1,5 @@
-/*
-
-.pa  {
-  font-size: 1rem;
-  color: black;
-  border: 0;
-  outline: 0;
-  position: fixed;
-  left: 4rem;
-  top: 5%;
-  transition: transform .3s cubic-bezier(0, .52, 0, 1);
-}
-
-.hide{
-  transform: translate3d(-100vw, 0, 0);
-}
-
-.show {
-  transform: translate3d(0vw, 0, 0);
-  transition: transform .3s cubic-bezier(0, .52, 0, 1);
-}
-
-.search-item{
-}
-.measure__ {
-    width: 250px;
-}
-
-#name{
-    background-color: white;
-}
-
-
-input{
-    border-radius: 20px;
-    color: black;
-}
-
-
-.main-nav-search-form {
-    position: relative;
-
-    // main-nav-search-form__input
-    &__input {
-      border: none;
-      border-radius: 20px;
-      padding: 10px;
-      outline: none;
-    }
-
-    // main-nav-search-form__button
-    &__button {
-      background: #EB4E7A;
-      border: none;
-      border-radius: 86px;
-      cursor: pointer;
-      height: 36px;
-      left: 199px;
-      outline: none;
-      position: absolute;
-      top: 0;
-      width: 51px;
-      display: flex;
-      .svg {
-        fill: white;
-        align-content: center;
-        align-items: center;
-        padding-left: 7px;
-        padding-top: 2px;
-      }
-    }
-  }
-
-
-.SearchField--title{
-  color: white;
-}
-*/
 .footer{
-  margin-top: 60px;
+  margin-top: 60px; 
   margin-left: 4rem;
   margin-bottom: 50px;
   @media screen  and (min-width: 769px) {
@@ -85,6 +7,11 @@ input{
   }
   @media screen and (min-width: 0px) and (max-width: 768px) {
     margin-bottom: 5rem;
+  }
+  .footer--social {
+    @media screen  and (min-width: 1800px) {
+      padding-right: 5rem;
+    }
   }
   .footer--info__socialmedia, .footer--info{
       color: #80868b;

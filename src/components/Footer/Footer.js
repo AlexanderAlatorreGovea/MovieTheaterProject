@@ -3,10 +3,10 @@ import './Footer.scss';
 
 const Footer = () => {
     return (
-        <div className="Footer">
+        <div id="Footer" className="Footer">
             <div className="footer--information">
                 <div className="footer--information__title">
-                    <span style={{ fontSize: '1.8rem' }}>Movie Bonanza</span>
+                    <span id="movie-bonanza">Movie Bonanza</span>
                     <span>Home</span>
                     <span>Discover</span>
                     <span>Our Movies</span>

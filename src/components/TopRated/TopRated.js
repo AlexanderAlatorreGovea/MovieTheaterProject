@@ -8,6 +8,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
+        id='left--arrow__people'
         className={className} 
         style={{ ...style, display: "block", background: "rgba(0,0,0,.5)" }}
         onClick={onClick}>
