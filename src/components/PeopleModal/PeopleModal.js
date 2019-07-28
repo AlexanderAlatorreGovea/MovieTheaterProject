@@ -61,42 +61,42 @@ class PeopleModal extends React.Component {
           top: '0',
           bottom: '0',
           left: '0',
-          right: '0',
+          right: '0', 
           display: 'grid',
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: 'rgba(0,0,0,0.99)',
           zIndex: '100',
           height: '100vh'
-        }} 
+        }}  
         onClick={onClose}
       >
-        <svg onClick={onClose} className="x" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg>
-            <div class="movie_card" id="bright" key={modalId} >
-                <div class="info_section">
-                    <div class="movie_header">
-                        <img style={{ borderRadius: '10px'}} class="locandina" src={`${imgURL}${personImage}`}/>
+        <svg style={{cursor: 'pointer'}} onClick={onClose} className="x" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg>
+            <div className="movie_card" id="bright" key={modalId} >
+                <div className="info_section">
+                    <div className="movie_header">
+                        <img style={{ borderRadius: '10px'}} className="locandina" src={`${imgURL}${personImage}`}/>
                         <h1>{name}</h1>
                         <h4>2019, {character}</h4>
-                        <span class="minutes">{this.props.time}</span>
-                        <p class="type">Action, Crime, Fantasy</p>
+                        <span className="minutes">{this.props.time}</span>
+                        <p className="type">Action, Crime, Fantasy</p>
                     </div>
-                    <div class="movie_desc">
-                        <p class="text">
+                    <div className="movie_desc">
+                        <p className="text">
                             {this.state.personInfo ? this.truncateTitle(this.state.personInfo) : this.props.overview} 
                         </p>
                     </div>
-                    <div class="movie_social">
+                    <div className="movie_social">
                         <ul>
-                            <li><i class="share alternate icon"></i></li>
-                            <li><i class="heart icon"></i></li>
-                            <li><i class="comment icon"></i></li>
+                            <li><i className="share alternate icon"></i></li>
+                            <li><i className="heart icon"></i></li>
+                            <li><i className="comment icon"></i></li>
                         </ul>
                     </div>
                 </div>
                 <div 
                   style={{ background: `url('${imgURL}${backDrop}')`}}         
-                  class="blur_back bright_back"></div>
+                  className="blur_back bright_back"></div>
             </div>
         </div>,
       this.el

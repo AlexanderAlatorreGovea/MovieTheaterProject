@@ -7,6 +7,12 @@
     font-size: 2em;
     outline: 1px solid #5E9ED6;
     outline-offset: 12px;
+    @media screen  and (min-width: 1800px) {
+        height: 80px;
+        width: 80px;
+        outline: 2px solid #5E9ED6;
+        outline-offset: 24px;
+    } 
     &:hover{
         cursor: pointer;
     }

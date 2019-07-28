@@ -34,7 +34,7 @@ class VideoModal extends React.Component {
         }}
         onClick={onClose}
       >
-        <svg onClick={onClose} className="x" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg>
+        <svg style={{cursor: 'pointer'}}  onClick={onClose} className="x" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg>
 
          <iframe
             style={{
