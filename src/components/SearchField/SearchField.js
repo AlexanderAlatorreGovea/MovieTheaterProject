@@ -70,7 +70,7 @@ class SearchField extends React.Component {
                     })}
                 </div>
             </div>
-            <footer className="footer">
+            <footer id="search-fiedl-footer" className="footer">
                   <div className="footer--info">
                   © 2019 Alexander Govea. All rights reserved. <br />
                   Designed and built using data provided by TMDb.

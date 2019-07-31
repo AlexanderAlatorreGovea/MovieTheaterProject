@@ -4,19 +4,24 @@
   margin-bottom: 50px;
   @media screen  and (min-width: 769px) {
     margin-bottom: 50px;
-  }
+  } 
   @media screen and (min-width: 0px) and (max-width: 768px) {
     margin-bottom: 5rem;
   }
   .footer--social {
+      /*
     @media screen  and (min-width: 1800px) {
       padding-right: 5rem;
-    }
+    }*/
   }
   .footer--info__socialmedia, .footer--info{
       color: #80868b;
       line-height: 2.5rem;
   }
+  #search-fiedl-footer {
+
+  }
+
   .footer--info__socialmedia{
       padding-top: 20px;
       font-size: 1.4em;
@@ -53,3 +58,12 @@
       }
    }
 }
+
+//////////////////Media Queries //////////////////
+
+
+@media (min-width: 1200px){
+    #search-fiedl-footer {
+        padding-left: 14rem;
+    }
+} 

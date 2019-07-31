@@ -20,7 +20,7 @@
     z-index: 5;
     height: 4rem;
     background-color: #000;
-  }
+  }/*
   @media screen  and (min-width: 1800px) {
     top: 0;
     right: auto;
@@ -29,7 +29,7 @@
     position: fixed;
     background: #000;
     height: 100vh;  
-  }
+  }*/
     .main-nav__icons{
       @media screen  and (min-width: 769px) {
         align-items: center;
@@ -58,11 +58,11 @@
       @media screen  and (min-width: 769px) {
         flex: 0 1 auto;
         height: 10rem;
-      }
+      }/*
       @media screen  and (min-width: 1800px) {
         flex: 0 1 auto;
         height: 14rem; 
-      }
+      }*/
     }
     }
 }
@@ -83,11 +83,11 @@
     }
     @media screen and (min-width: 0px) and (max-width: 768px) {
       left: 2rem;
-    }
+    }/*
     @media screen  and (min-width: 1800px) {
       left: 14rem;
       top: 12.7rem;
-    }
+    }*/
 }
    
 /*********************SEARCH BAR ANIMATIONS*******************************/
@@ -104,10 +104,10 @@
   }
 
   .measure__ {
-      width: 250px;
+      width: 250px;/*
       @media screen  and (min-width: 1800px) {
         width: 600px;
-      }
+      }*/
   }
   
   #name{
@@ -118,12 +118,12 @@
 
   }
   
-  .pa2 {
+  .pa2 {/*
     @media screen  and (min-width: 1800px) {
       padding: 2.5rem;
       border-radius: 5rem;
       font-size: 2.3rem;
-    }
+    }*/
   }
 
   input{
@@ -157,7 +157,7 @@
         position: absolute;
         top: 0;
         width: 51px;
-        display: flex;
+        display: flex;/*
         @media screen  and (min-width: 1800px) {
           padding: 2.5rem;
           border-radius: 5rem;
@@ -166,7 +166,7 @@
           width: 200px;
           display: flex;
           left: 25rem;
-        }
+        }*/
         .svg {
           fill: white;
           align-content: center;
@@ -178,7 +178,7 @@
 
 
   //////////////////////////MEDIA QUERIES///////////////////////////////@at-root
-
+/*
   @media screen  and (min-width: 1800px) {
     #home-icon {
       font-size: 4.5rem;
@@ -190,4 +190,4 @@
       font-size: 3.5em;
       padding-left: 2rem;
     }
-  }
+  }*/

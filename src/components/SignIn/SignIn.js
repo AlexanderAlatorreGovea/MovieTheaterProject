@@ -50,7 +50,7 @@ class SignIn extends Component {
                                         <input type="password" placeholder="Password" />
                                         <a>Forgot your password?</a>
                                         <button className="btn">Sign In</button>
-                                    </form>
+                                    </form> 
                                 </div>
                                 <div className="overlay-container">
                                     <div className="overlay">

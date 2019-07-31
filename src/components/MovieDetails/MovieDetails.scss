@@ -14,15 +14,17 @@
   @media screen  and (min-width: 769px) {
     margin-left: 4rem;
   }
+  /*
   @media screen  and (min-width: 1800px) {
     margin-left: 11rem;
-  }
+  }*/
 }
 
 #heart{
+  /*
   @media screen  and (min-width: 1800px) {
     font-size: 3rem;
-  }
+  }*/
 }
 
 a {
@@ -56,9 +58,10 @@ a {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 100%;
+  /*
   @media screen  and (min-width: 1800px) {
     height: 658px;
-  }
+  }*/
   @media screen and (min-width: 0px) and (max-width: 800px) {
     height: 488px;  
   }
@@ -87,13 +90,14 @@ a {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   z-index: 2;
   width: 187px;
+  /*
   @media screen  and (min-width: 1800px) {
     border-radius: 19px;
     top: 16rem;
     left: 40px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     width: 14%;
-  }
+  }*/
   @media screen and (min-width: 0px) and (max-width: 425px) {
   top: 195px;
   left: 19px;
@@ -103,9 +107,10 @@ a {
 .title__and--ratings {
   display: flex;
   flex-wrap: wrap;
+  /*
   @media screen  and (min-width: 1800px) {
     padding-left: 11rem;
-}
+  }*/
 }
 
 /**************************** MOVIE DETAILS ************************************/
@@ -127,10 +132,11 @@ a {
     margin-bottom: 13px;
     position: relative;
     line-height: 36px;
+    /*
     @media screen  and (min-width: 1800px) {
       font-size: 7rem;
       margin-top: 9rem;
-    }
+    }*/
     .rated__pg {
       top: 3px;
       margin-left: 12px;
@@ -139,13 +145,14 @@ a {
       color: #544C21;
       font-size: 14px;
       padding: 3px 4px;
+      /*
       @media screen  and (min-width: 1800px) {
         top: 6px;
         margin-left: 24px;
         border-radius: 12px;
         font-size: 28px;
         padding: 6px 8px;
-      }
+      }*/
     }
     .rated__R{
       top: 3px;
@@ -165,19 +172,21 @@ a {
     font-size: 23px;    
     font-weight: 300;
     margin-bottom: 15px;
+    /*
     @media screen  and (min-width: 1800px) {
       font-size: 92px;
       padding-top: 2.5rem;
       padding-left: 11rem
-    }
+    }*/
   }
   
   
   .likes {
     margin-left: 2rem;
+    /*
     @media screen  and (min-width: 1800px) {
       font-size: 3rem;
-    }
+    }*/
   }
   
   
@@ -221,12 +230,13 @@ a {
     line-height: 35px;
     cursor: pointer;
     box-shadow: 0 0px 1px rgba(0, 0, 0, 0), 0 5px 8px -1px rgba(0, 0, 0, 0.22);
+    /*
     @media screen  and (min-width: 1800px) {
       border-radius: 20px;
       padding: 6px 16px;
       font-size: 28px;
       margin-right: 4px;
-  }
+  }*/
 }
 
 .tag:hover {
@@ -242,9 +252,7 @@ a {
   margin-left: 17rem;
   padding-right: 2rem;
   @media screen  and (min-width: 1800px) {
-    padding-left: 17rem;
-    font-size: 2.7rem;
-    line-height: 1.5;
+    max-width: 1280px;
   }
   @media screen and (min-width: 426px) and (max-width: 800px) {
     padding-left: 0px;
@@ -287,12 +295,13 @@ fieldset, label { margin: 0; padding: 0; }
 
 .rating { 
   border: none;
+  /*
   @media screen  and (min-width: 1800px) {
     padding-left: 11rem;
     padding-top: 2.5rem;
     display: flex;
     align-items: center;
-  }
+  }*/
 }
 
 .rating > input { display: none; } 
@@ -391,10 +400,11 @@ a[data-tooltip][data-placement="top"]::after {
     fill: white;
     height: 15px;
     width: 15px;
+    /*
     @media screen  and (min-width: 1800px) {
       height: 60px;
       width: 60px;
-    }
+    }*/
     &--active {
       fill: #FFD700;
     }
@@ -428,12 +438,13 @@ a[data-tooltip][data-placement="top"]::after {
   left: 102px;
   height: 40px;
   width: 55px;
+  /*
   @media screen  and (min-width: 1800px) {
     height: 80px;
     width: 110px;
     top: 29rem;
     left: 147px;
-  }
+  }*/
   @media screen and (min-width: 0px) and (max-width: 425px) {
     top: 20rem;
     left: 86px;
@@ -484,10 +495,11 @@ a[data-tooltip][data-placement="top"]::after {
       display: flex;
       flex-direction: row;
       font-size: 1rem;
+      /*
       @media screen  and (min-width: 1800px) {
         padding-left: 1rem;
         padding-top: 2rem;
-      }
+      }*/
       @media screen and (min-width: 0px) and (max-width: 650px) {
         display: flex;
         flex-direction: column;
@@ -500,19 +512,21 @@ a[data-tooltip][data-placement="top"]::after {
           display: flex;
           flex-direction: column;
           color: #000;
+          /*
           @media screen  and (min-width: 1800px) {
             font-size: 2.5rem;
             line-height: 1.2;
-          }
+          }*/
         }
         .info__left--data{
           display: flex;
           flex-direction: column;
           margin-left: 1.5rem;
+          /*
           @media screen  and (min-width: 1800px) {
             font-size: 2rem;
             line-height: 1.5;
-          }
+          }*/
         }
       }
 
@@ -527,26 +541,28 @@ a[data-tooltip][data-placement="top"]::after {
           color: #000;
           display: flex;
           flex-direction: column;
+          /*
           @media screen  and (min-width: 1800px) {
             font-size: 2.5rem;
             line-height: 1.2;
-          }
+          }*/
         }
         .info__right--data{
           display: flex;
           flex-direction: column;
           margin-left: 1.5rem;
+          /*
           @media screen  and (min-width: 1800px) {
             font-size: 2.5rem;
             line-height: 1.2;
-          }
+          }*/
         }
       }
     }
-    .production__info--media{
+    .production__info--media{/*
       @media screen  and (min-width: 1800px) {
         max-height: 3rem;
-      }
+      }*/
       #icons{
         display: flex;
         flex-direction: row;
@@ -558,12 +574,12 @@ a[data-tooltip][data-placement="top"]::after {
 .tmdb {
   color: #141414;
   font-size: 1.3rem;
-  margin-right: 2rem;
+  margin-right: 2rem;/*
   @media screen  and (min-width: 1800px) {
     font-size: 3rem;
     height: 3rem;
     width: 3rem;
-  }
+  }*/
   &:hover{
     color: $red;
     cursor: pointer;
@@ -571,12 +587,12 @@ a[data-tooltip][data-placement="top"]::after {
 }
 
 .tmdb{
-  fill: #141414;
+  fill: #141414;/*
   @media screen  and (min-width: 1800px) {
     font-size: 3rem;
     height: 3rem;
     width: 3rem;
-  }
+  }*/
   &:hover{
     fill: $red;
     cursor: pointer;
@@ -585,7 +601,7 @@ a[data-tooltip][data-placement="top"]::after {
 
 
 ///////////MEDIA QUERIES////////////////////////////
-
+/*
 
 @media screen  and (min-width: 1800px) {
   .production__info--media {
@@ -596,7 +612,7 @@ a[data-tooltip][data-placement="top"]::after {
     max-height: 3rem;
     align-items: flex-end;
   }
-}
+}*/
 
 
 

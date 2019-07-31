@@ -23,31 +23,35 @@
         align-content: center;
         align-items: center;
         padding-bottom: 8rem;
-    } 
+    } /*
     @media screen  and (min-width: 1800px) {
         margin-right: 4rem;
-    }
+    }*/
     .footer--information{
+        /*
         @media screen  and (min-width: 1800px) {
             padding-left: 9rem;
-        }
+        }*/
         .footer--information__title{
             padding-bottom: 2.2rem;
+            /*
             @media screen  and (min-width: 1800px) {
                 font-size: 3rem;
-            }
+            }*/
             #movie-bonanza{
                 font-size: 1.8rem;
+                /*
                 @media screen  and (min-width: 1800px) {
                     font-size: 3rem;
-                }
+                }*/
             }
             span{
                 padding-right: 20px;
                 font-size: 1rem;
+                /*
                 @media screen  and (min-width: 1800px) {
                     font-size: 3rem;
-                }
+                }*/
             }
             @media screen and (min-width: 0px) and (max-width: 425px) {
                 display: flex;
@@ -61,10 +65,11 @@
             display: flex;
             line-height: 1.5rem;
             padding-bottom: 1.8rem;
+            /*
             @media screen  and (min-width: 1800px) {
                 font-size: 2rem;
                 line-height: 2;
-            }
+            }*/
             @media screen and (min-width: 0px) and (max-width: 680px) {
                 width: 300px;
             }
@@ -85,10 +90,10 @@
         display: flex;
         flex-direction: column;
         font-size: .78rem;
-        margin-bottom: 3rem;
+        margin-bottom: 3rem;/*
         @media screen  and (min-width: 1800px) {
             font-size: 1.5rem;
-        }
+        }*/
         }
         @media screen and (min-width: 0px) and (max-width: 449px) {
             line-height: 1.1;
@@ -187,8 +192,9 @@
 }
 
 #Footer {
+    /*
     @media screen  and (min-width: 1800px) {
         padding-right: 4rem;
-    }
+    }*/
 }
 
