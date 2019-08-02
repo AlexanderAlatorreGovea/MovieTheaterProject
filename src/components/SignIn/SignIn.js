@@ -74,10 +74,10 @@ class SignIn extends Component {
                         Designed and built using data provided by TMDb.
                         </div>
                         <div className="footer--info__socialmedia">
-                            <i class="github icon "></i>
-                            <i class="linkedin icon justify"></i>
-                            <i class="twitter icon justify"></i>
-                            <i class="envelope outline icon justify"></i>
+                            <i class="github icon "><a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"></a></i>
+                            <i class="linkedin icon justify"><a href="https://www.linkedin.com/in/alexander-govea-735774107/" target="_blank"></a></i>
+                            <i class="twitter icon justify"><a href="https://www.linkedin.com/in/alexander-govea-735774107/" target="_blank"></a></i>
+                            <i class="envelope outline icon justify"><a href="mailto:alexander_alatorre1993@hotmail.com"></a></i>
                         </div>
                     </footer>
                 </div>

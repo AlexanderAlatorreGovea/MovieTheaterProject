@@ -76,10 +76,10 @@ class SearchField extends React.Component {
                   Designed and built using data provided by TMDb.
                   </div>
                   <div className="footer--info__socialmedia">
-                     <i class="github icon "></i>
-                     <i class="linkedin icon justify"></i>
-                     <i class="twitter icon justify"></i>
-                     <i class="envelope outline icon justify"></i>
+                     <a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"><i class="github icon "></i></a>
+                     <a href="https://www.linkedin.com/in/alexander-govea-735774107/" target="_blank"><i class="linkedin icon justify"></i></a>
+                     <a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"><i class="twitter icon justify"></i></a>
+                     <a href="mailto:alexander_alatorre1993@hotmail.com"><i class="envelope outline icon justify"></i></a>
                   </div>
             </footer>
         </div>
