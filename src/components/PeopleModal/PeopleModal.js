@@ -27,7 +27,6 @@ class PeopleModal extends React.Component {
 
   componentDidMount() {
     axios.get(`https://api.themoviedb.org/3/person/${this.props.id}?api_key=${this.apiKey}&language=en-US`).then(res => {
-      console.log(res.data)
       this.setState({ 
         personInfo: res.data.biography
       })

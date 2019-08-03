@@ -54,7 +54,6 @@ class PeopleCarrousel extends React.Component {
 
      componentWillMount() {
         axios.get(`${baseUrl}${this.props.movie_id}/credits?api_key=${apiKey}`).then(res => {
-            console.log(res.data)
             this.setState({ 
                 people: res.data.cast
             })
@@ -67,11 +66,7 @@ class PeopleCarrousel extends React.Component {
       personImage: person.profile_path,
       name: person.name,
       character: person.character
-    }, 
-      console.log(person.id), 
-      console.log(this.state.modalId),
-      console.log(this.character)
-      ) 
+    }, ) 
      
     closeModal = () => this.setState({openModal: false})
 
@@ -119,7 +114,6 @@ class PeopleCarrousel extends React.Component {
               <Slider {...settings}>
                 {  
                 this.state.people.map((person, index)=> {
-                console.log(person)
                 if( index <= 10) {
                 return(
                       <div key={index}>

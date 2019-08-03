@@ -41,8 +41,6 @@ class MovieDetailsDefault extends React.Component {
 
     componentWillMount() {
         axios.get(`${baseUrl}301528?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
-            console.log(res.data);
-            console.log(res.data.videos.results)
             this.setState({ 
                 details: res.data.genres,
                 videos: res.data.videos.results,

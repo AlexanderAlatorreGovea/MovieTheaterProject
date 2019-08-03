@@ -42,9 +42,6 @@ class App extends React.Component {
   toggleSearchBar  = () => this.setState({toggleSearchBar: !this.state.toggleSearchBar})
 
   render(){
-    console.log(this.state.movies)
-    console.log(this.state.movies.lenght)
-    console.log(this.state)
     return (
       <Router >
           <ScrollToTop>

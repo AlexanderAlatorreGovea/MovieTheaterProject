@@ -7,36 +7,20 @@
     margin-left: 60px; 
     margin-top: 5rem;
     width: 95%;
-    /*
-    @media screen  and (min-width: 1800px) {
-        width: 100%;
-    }*/
     @media screen and (min-width: 0px) and (max-width: 768px){
         margin-left: 0px;
         width: 100%
     }
-    /*
-    .slick-slider {
-        @media screen  and (min-width: 1800px) {
-            padding-left: 9rem;
-        }
-    }*/
     .movie--category{
     padding-bottom: 45px; 
     padding-left: 7px;
-    display: flex;/*
-    @media screen  and (min-width: 1800px) {
-        padding-left: 11rem;
-    }*/
+    display: flex;
     }
     .movie--category__title{
         font-family:  $primary-font; 
         font-size: 1.4rem;
         letter-spacing: 1px;
-        color: $secondary-font-color;/*
-        @media screen  and (min-width: 1800px) {
-            font-size: 3rem;
-        }*/
+        color: $secondary-font-color;
     }
     .movie--category__explore{
         font-family: $textFont; 
@@ -69,10 +53,7 @@
     padding-bottom: 1px;
     @media only screen and (min-width: 1200px){
         padding-right: 15px;
-    }/*
-    @media screen  and (min-width: 1800px) {
-        padding-right: 54px;
-    } */
+    }
     .movie-details--star__ratings{
        display: flex;
        flex-direction: row;
@@ -89,10 +70,6 @@
          @media only screen and (max-width: 900px){
              font-size: .9rem;
          }
-         /*
-         @media only screen and (min-width: 1800px){
-            font-size: 3rem;
-        }*/
      }
      .stars-rating-header__item{
         height: 20px;
@@ -142,7 +119,7 @@
 }
 
 
-/*********************CAROUSEL****************************/
+////////////////////////////CAROUSEL///////////////////////////////////////
 
 .slick-prev {
     left: -1px;
@@ -173,12 +150,6 @@
         background: rgba(0, 0, 0, 0.7);
         opacity: 1;
     }
-    /*
-    @media screen  and (min-width: 1800px) {
-        height: 100%;
-        //top: 20.5rem;
-        padding-left: 9rem;
-    }*/
 }
  
 
@@ -188,11 +159,7 @@
     top: 45%;
     &:hover{
        transform: translate3d(0,1,0)
-    }/*
-    @media screen  and (min-width: 1800px) {
-        width: 6rem;
-        height: 4rem;
-    }*/
+    }
 }
 
 .right--arrow__home{
@@ -209,11 +176,10 @@ button{
 
 .slick-prev:before {
    display: none;
-}
+} 
 
 .slick-next:before {
-    display: none;
+    display: none; 
  }
 
- //////////////////Media Queries ///////////@at-root
 

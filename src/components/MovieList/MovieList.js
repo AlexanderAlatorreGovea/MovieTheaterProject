@@ -14,7 +14,6 @@ class MovieList  extends React.Component {
 
             {
             this.props.movies.map((movie, i) => {
-            console.log(movie)
             return(
             <MovieCard 
                 key={movie.id} 

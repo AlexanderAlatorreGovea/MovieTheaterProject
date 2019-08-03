@@ -78,24 +78,11 @@
       font-size: 3.5rem;
       line-height: 4rem;
       text-align: start;
-      /*
-      @media screen  and (min-width: 1800px) {
-        font-size: 6rem;
-      } */
     }
     .star-rating-and__info{
       display: flex;
       align-items: center;
       margin-bottom: 17px;
-      /*
-      @media screen  and (min-width: 1800px) {
-        display: flex;
-        align-items: center;
-        margin-bottom: 17px;
-        font-size: 3rem;
-        width: 1000px;
-        padding-top: 2rem;
-      } */
     }
     .star{
       color: #2196f3;
@@ -108,11 +95,6 @@
       line-height: 1.6;
       font-family: $primary-font;
       color: #ffffff;
-      /*
-      @media screen  and (min-width: 1800px) {
-        font-size: 2rem;
-        width: 1000px;
-      } */
     }
     .watch--trailer{
       background-color: #202124;
@@ -125,13 +107,7 @@
       font-family: $textFont;
       font-size: .9rem;
       letter-spacing: 1.2px;
-      justify-content: center;\
-      /*
-      @media screen  and (min-width: 1800px) {
-        font-size: 2.5rem;
-        height: 100px;
-        width: 400px;
-      } */
+      justify-content: center;
       &:hover {
         background: $red;
         cursor: pointer;
@@ -139,17 +115,8 @@
       }
       .watch--trailer__icon{
         padding-right: 10px;
-        /*
-        @media screen  and (min-width: 1800px) {
-          padding-right: 26px;
-        } */
         svg{
           display: flex;
-          /*
-          @media screen  and (min-width: 1800px) {
-            height: 40px;
-            width: 40px;
-          } */
         }
       }
     }
@@ -164,7 +131,7 @@
   }
 
 
-/*********************MEDIA QUERIES*******************************/
+///////////////////////MEDIA QUERIES//////////////////////
 
   @media screen and (min-width: 0px) and (max-width: 750px) {
     .home-swiper-container{
@@ -242,7 +209,7 @@
             background: #000;
           }
           .header-info{
-            left: -18rem;
+            left: -18rem; 
           }
           .swiper-slide {
             height: 60vh;

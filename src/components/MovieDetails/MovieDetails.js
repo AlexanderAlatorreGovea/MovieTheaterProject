@@ -42,7 +42,6 @@ class MovieDetails extends React.Component {
         const imgURL = this.props.location.state.imgURL
         const movie = this.props.location.state.movie
         axios.get(`${baseUrl}${this.props.location.state.movie.id}?api_key=${apiKey}&append_to_response=videos,details,images,movie_id,known_for_department,person_id,people`).then(res => {
-            console.log(res.data);
             this.setState({ 
                 details: res.data.genres,
                 videos: res.data.videos.results,
@@ -80,10 +79,7 @@ class MovieDetails extends React.Component {
     const ratings = this.state.rating;
     const movieGenres = this.state.details;
     const movieRatings = Math.round(MovieDetailsConfig.movie.popularity)
-    console.log(secondaryImage)
     this.setRating(MovieDetailsConfig.movie.vote_average)
-    console.log(MovieDetailsConfig)
-
         return (
         <div className="MovieDetails" style={{background: 'white'}}>
             <Preloader />

@@ -14,11 +14,6 @@
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
-  /*
-  @media screen  and (min-width: 1800px) {
-    width: 1600px;
-    height: 900px;
-  }*/
   .info_section{
     position: relative;
     width: 100%;
@@ -30,21 +25,9 @@
       position: relative;
       padding: 25px;
       height: 40%;
-      /*
-      @media screen  and (min-width: 1800px) {
-        padding-top: 2.5rem;
-        font-size: 2.5rem;
-        line-height: 1.2;
-        padding-bottom: 0;
-        height: 38%;
-      }*/
       h1{
         color: #fff;
         font-weight: 400;
-        /*
-        @media screen  and (min-width: 1800px) {
-          padding-top: 1rem;
-        }*/
       }
       h4{
         color: #9ac7fa;
@@ -69,27 +52,13 @@
         margin-right: 20px;
         height: 120px;
         box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
-        /*
-        @media screen  and (min-width: 1800px) {
-          height: 240px;
-        }*/
       }
     }
     .movie_desc{
       padding: 25px;
       height: 50%;
-      /*
-      @media screen  and (min-width: 1800px) {
-        padding-top: 0px;
-      }*/
       .text{
         color: #cfd6e1;
-        /*
-        @media screen  and (min-width: 1800px) {
-          font-size: 2.3rem;
-          letter-spacing: 1.5px;
-          line-height: 1.2;
-        }*/
       }
     }
     .movie_social{
@@ -112,10 +81,6 @@
           i{
             font-size: 19px;
             cursor: pointer;
-            /*
-            @media screen  and (min-width: 1800px) {
-              font-size: 3rem;
-            }*/
           }
         }
       }
@@ -174,7 +139,7 @@
   
   .info_section{
     background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
-    display: inline-grid;
+    display: inline-grid; 
   }
 }
 
@@ -187,5 +152,4 @@
 } 
 
 
-////////////////////MEDIA QUERIES/////////////////////@at-root
 

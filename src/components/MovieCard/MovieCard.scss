@@ -4,21 +4,11 @@
         padding: 0;
         margin: 0;
         width: 200px; 
-        height: 292.5px;/*
-        @media screen  and (min-width: 1800px) {
-            width: 400px;
-            height: 500px;
-            opacity: .9;
-        }*/
+        height: 292.5px;
     } 
-    img .searched-image{
+    img .searched-image{ 
         width: 200px;
         height: 292.5px;
-        /*
-        @media screen  and (min-width: 1800px) {
-            width: 400px;
-            height: 500px;
-        }*/
         &:hover {
             transform: scale(1);
         }
@@ -27,35 +17,15 @@
         padding-left: 5px;
         width: 200px;
         height: 292.5px;
-        /*
-        @media screen  and (min-width: 1800px) {
-            width: 400px;
-            height: 500px;
-            opacity: .8;
-        }*/
-    }
-    .title {
-        /*
-        @media screen  and (min-width: 1800px) {
-            font-size: 3rem;
-        }*/
     }
     .gray{
         padding-left: 6px;
-        /*
-        @media screen  and (min-width: 1800px) {
-            font-size: 2.2rem;
-        }*/
     }
 }
 
 .MovieCard--wrapper {
     width: 200px;
     height: 292.5px;
-    /*
-    @media screen  and (min-width: 1800px) {
-        width: 400px;
-    }*/
 } 
 
 .card__img span {
@@ -63,13 +33,6 @@
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
-    svg {
-        /*
-        @media screen  and (min-width: 1800px) {
-            width: 80px;
-            height: 80px;
-        }*/
-    }
 }
 
 .card__img {
@@ -79,9 +42,4 @@
     width: 200px;
     height: 292.5px;
     padding-top: 61%;
-    /*
-    @media screen  and (min-width: 1800px) {
-        width: 400px;
-        height: 500px;
-    }*/
 }

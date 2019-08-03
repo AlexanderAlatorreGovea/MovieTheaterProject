@@ -8,12 +8,6 @@
   @media screen and (min-width: 0px) and (max-width: 768px) {
     margin-bottom: 5rem;
   }
-  .footer--social {
-      /*
-    @media screen  and (min-width: 1800px) {
-      padding-right: 5rem;
-    }*/
-  }
   .footer--info__socialmedia, .footer--info{
       color: #80868b;
       line-height: 2.5rem;
@@ -55,7 +49,7 @@
               transition: .3s ease-in-out;
               cursor: pointer;
           }
-      }
+      } 
    }
 }
 

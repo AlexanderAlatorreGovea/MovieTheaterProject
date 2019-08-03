@@ -20,7 +20,6 @@ class SearchBarModal extends React.Component {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchQuery}`)
         .then(data => data.json())
         .then(data => {
-            console.log(data)
             this.setState({ 
                 movies: [...data.results.results] 
             })

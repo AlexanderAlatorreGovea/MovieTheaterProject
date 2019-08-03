@@ -41,8 +41,6 @@ class MovieSlider extends React.Component {
     
     componentWillMount() {
       axios.get(`${baseUrl}301528?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
-          console.log(res.data);
-          console.log(res.data.videos.results)
           this.setState({ 
               details: res.data.genres,
               videos: res.data.videos.results,
@@ -110,7 +108,7 @@ class MovieSlider extends React.Component {
                 <p className="synopsis">
                     {this.state.overview}
                 </p>
-                <div className="watch--trailer" onClick={this.handleShowModal}>
+                <div className="watch--trailer" style={{cursor: 'pointer'}} onClick={this.handleShowModal}>
                   <div className="watch--trailer__icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M3 22v-20l18 10-18 10z"></path></svg>
                   </div>

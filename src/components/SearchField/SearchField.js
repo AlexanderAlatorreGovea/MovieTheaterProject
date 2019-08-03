@@ -39,10 +39,6 @@ class SearchField extends React.Component {
       }
     
    render() {
-   console.log(this.props.location.state)
-   console.log(this.props)
-   console.log(this.props.location.state.handleChange)
-   console.log(this.props.match.params.id)
    return (
         <div className="SearchField" >
             <div className="MovieList" style={{paddingLeft: '3rem'}}>

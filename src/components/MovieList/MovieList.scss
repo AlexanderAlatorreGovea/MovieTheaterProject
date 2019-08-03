@@ -3,11 +3,6 @@
 
 .MovieList{
     margin-top: 9.3rem; 
-    /*
-    @media screen  and (min-width: 1800px) {
-        padding-left: 14rem;
-        margin-top: 25.3rem;
-    } */
     .searchField-title{
         color: $titleColor;
         padding-left: 2rem;
@@ -15,7 +10,7 @@
         font-size: 1.3rem;
         
         @media (min-width: 1200px) {
-            font-size: 1.7rem;
+            font-size: 1.7rem; 
             padding: 2.5rem 14.5rem;;
         } 
       }
@@ -36,7 +31,7 @@
 }
  
 
-/*******************MEDIA QUERIES*******************************/
+///////////////////////MEDIA QUERIES/////////////////////
 
 @media (min-width: 1200px){
     .MovieList-Wrapper {
@@ -51,13 +46,5 @@
     }
 }
 
-@media (min-width: 1200px){
-    .footer {
-        //padding-left: 14rem;
-    }
 
-    .footer--info { 
-        //font-size: 2rem;
-    }
-} 
 
