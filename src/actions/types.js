@@ -8,3 +8,6 @@ export const FETCH_TOP_RATED_MOVIES = 'FETCH_TOP_RATED_MOVIES';
 
 export const SEARCH_DATA = 'SEARCH_DATA';
 
+export const GET_MOVIE_DETAILS = 'GET_MOVIE_DETAILS';
+
+

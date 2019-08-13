@@ -72,7 +72,7 @@
          }
      }
      .stars-rating-header__item{
-        height: 20px;
+        height: 20px; 
         fill: #FFD700;
         @media only screen and (min-width: 1200px){
             height: 3rem;
@@ -85,9 +85,6 @@
                 height: 10px;
             }
         }
-        @media screen  and (min-width: 1800px) {
-            height: 3rem;
-        } 
     }
 }
 

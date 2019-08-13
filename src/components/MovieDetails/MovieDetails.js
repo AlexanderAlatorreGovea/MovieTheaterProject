@@ -2,10 +2,7 @@ import React from 'react';
 import './MovieDetails.scss';
 import { 
     apiKey,
-    global,
     baseUrl,
-    baseUrlKey,
-    appendToResponse 
     } from '../../apis/apiKey';
 
 import axios from 'axios';
@@ -13,8 +10,9 @@ import PeopleCarrousel from '../PeopleCarrousel/PeopleCarrousel';
 import VideoModal from '../VideoModal/VideoModal';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
-
-
+import getMovieDetails from '../../actions/index';
+import  { connect  } from 'react-redux';
+ 
 class MovieDetails extends React.Component {
     constructor(props) {
         super(props);
@@ -34,23 +32,20 @@ class MovieDetails extends React.Component {
      
     handleCloseModal = () => this.setState({showModal: false})
 
-    
 
     componentWillMount() {
-        const  movieId = this.props.match.params
-        const MovieDetailsConfig = this.props.location.state
-        const imgURL = this.props.location.state.imgURL
-        const movie = this.props.location.state.movie
-        axios.get(`${baseUrl}${this.props.location.state.movie.id}?api_key=${apiKey}&append_to_response=videos,details,images,movie_id,known_for_department,person_id,people`).then(res => {
+        axios.get(`${baseUrl}301528?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
             this.setState({ 
                 details: res.data.genres,
                 videos: res.data.videos.results,
                 posters: res.data.images.posters[2],
                 rating: res.data.adult,
-                additionalDetails: res.data
+                additionalDetails: res.data,
             })
         })
     }
+
+    
 
     format = (n) => {
         let num = this.state.additionalDetails.runtime;
@@ -80,6 +75,7 @@ class MovieDetails extends React.Component {
     const movieGenres = this.state.details;
     const movieRatings = Math.round(MovieDetailsConfig.movie.popularity)
     this.setRating(MovieDetailsConfig.movie.vote_average)
+    console.log(this.props.location.state.movie)
         return (
         <div className="MovieDetails" style={{background: 'white'}}>
             <Preloader />
@@ -221,6 +217,14 @@ class MovieDetails extends React.Component {
           </div>
       )
     }
-  }
+  };
 
-  export default MovieDetails;
+const mapStateToProps = (state) => {
+return { 
+    movieDetails: state.getMovieDetails
+}}
+
+
+export default connect(mapStateToProps, 
+    { getMovieDetails }
+)(MovieDetails);

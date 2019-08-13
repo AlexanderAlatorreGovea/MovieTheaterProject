@@ -4,9 +4,10 @@ import {
     FETCH_UPCOMING_MOVIES,
     FETCH_POPULAR_MOVIES,
     FETCH_TOP_RATED_MOVIES,
-    SEARCH_DATA
+    SEARCH_DATA,
+    GET_MOVIE_DETAILS 
 } from './types'; 
-
+ 
 
 
 export const fetchUpcomingMovies = () =>  async dispatch => {
@@ -52,4 +53,20 @@ export const searchData = url => {
       .catch(error => console.log(error))
     };
 };
+
+const saveMovieDetails = payload => ({
+  type: GET_MOVIE_DETAILS,
+  payload
+});
+
+const getMovieDetails = url => {
+  return dispatch => {
+    fetch(url)
+  }
+};
+
+export default getMovieDetails;
+
+
+
   
