@@ -73,7 +73,6 @@ class MovieSlider extends React.Component {
       slidesToScroll: 1
     }
 
-
   const imgURL= 'http://image.tmdb.org/t/p/w780';
    return (
       <div className="home-swiper-container">

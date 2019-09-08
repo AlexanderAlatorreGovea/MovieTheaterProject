@@ -43,7 +43,7 @@ class App extends React.Component {
 
   render(){
     return (
-      <Router >
+      <Router > 
           <ScrollToTop>
             <Route exact path="/MovieDetailsDefault" component={ MovieDetailsDefault } />
             <Route exact path="/" component={ Home } />

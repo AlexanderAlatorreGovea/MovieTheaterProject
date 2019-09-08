@@ -32,7 +32,7 @@ function SampleNextArrow(props) {
 class TopRated extends Component {
     componentWillMount(){
         console.log(this.props.fetchTopRatedMovies())
-     }
+    }
 
     render() {
         const settings = {
@@ -131,7 +131,7 @@ class TopRated extends Component {
 const mapStateToProps = (state) => {
     return { 
         topRatedMovies: state.topRatedMovies
-    }}
+}}
 
 export default connect(mapStateToProps, { fetchTopRatedMovies }
 )(TopRated);

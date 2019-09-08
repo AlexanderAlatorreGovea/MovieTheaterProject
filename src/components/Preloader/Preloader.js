@@ -9,7 +9,6 @@ class Preloader extends React.Component{
 
     componentDidMount() {
         setTimeout(() => {
-    
           document.querySelector('.loader-container').style.transition = 'opacity 5s';
           document.querySelector('.loader-container').style.opacity = '0';
     

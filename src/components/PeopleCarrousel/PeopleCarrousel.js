@@ -66,7 +66,7 @@ class PeopleCarrousel extends React.Component {
       personImage: person.profile_path,
       name: person.name,
       character: person.character
-    }, ) 
+    }) 
      
     closeModal = () => this.setState({openModal: false})
 

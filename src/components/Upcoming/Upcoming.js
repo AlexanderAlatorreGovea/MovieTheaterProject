@@ -34,7 +34,7 @@ class Upcoming extends Component {
 
     componentWillMount(){
         console.log(this.props.fetchUpcomingMovies())
-     }
+    }
 
     render() {
         const settings = {
@@ -137,7 +137,7 @@ class Upcoming extends Component {
 const mapStateToProps = (state) => {
     return { 
          upcomingMovies: state.upcomingMovies
-    }}
+}}
 
 export default connect(mapStateToProps, { fetchUpcomingMovies }
 )(Upcoming);

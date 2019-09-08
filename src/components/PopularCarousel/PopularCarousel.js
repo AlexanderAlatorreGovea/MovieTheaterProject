@@ -135,7 +135,7 @@ class PopularCarousel extends Component {
 const mapStateToProps = (state) => {
     return { 
         popularMovies: state.popularMovies 
-    }}
+}}
 
 export default connect(mapStateToProps, { fetchPopularMovies }
 )(PopularCarousel);

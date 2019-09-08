@@ -34,7 +34,7 @@ class MovieDetails extends React.Component {
 
 
     componentWillMount() {
-        axios.get(`${baseUrl}301528?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
+        axios.get(`${baseUrl}${this.props.location.state.movie.id}?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
             this.setState({ 
                 details: res.data.genres,
                 videos: res.data.videos.results,

@@ -147,10 +147,10 @@ class HeroCarousel extends React.Component {
  const mapStateToProps = (state) => {
     return { 
          nowPlayingMovies: state.nowPlayingMovies
-      }}
+}}
 
-   export default connect(mapStateToProps, { fetchNowplayingMovies }
-   )(HeroCarousel);
+export default connect(mapStateToProps, { fetchNowplayingMovies }
+)(HeroCarousel);
 
 
 
