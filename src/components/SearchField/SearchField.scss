@@ -12,10 +12,6 @@
       color: #80868b;
       line-height: 2.5rem;
   }
-  #search-fiedl-footer {
-
-  }
-
   .footer--info__socialmedia{
       padding-top: 20px;
       font-size: 1.4em;
@@ -54,7 +50,10 @@
 }
 
 //////////////////Media Queries //////////////////
-
+.fw9, .title {
+    color: white;
+    padding-left: 6px;
+}
 
 @media (min-width: 1200px){
     #search-fiedl-footer {

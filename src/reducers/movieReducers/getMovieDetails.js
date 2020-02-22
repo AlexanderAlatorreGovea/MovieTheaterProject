@@ -1,8 +1,6 @@
 import { GET_MOVIE_DETAILS } from '../../actions/types';
 
-const initialState = {
-
-};
+const initialState = {};
 
 const getMovieDetails = (state = initialState, action) => {
   switch(action.type) {

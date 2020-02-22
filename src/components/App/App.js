@@ -6,6 +6,8 @@ import PeopleModal from '../PeopleModal/PeopleModal';
 import SignIn from '../SignIn/SignIn';
 import MovieDetailsDefault from '../MovieDetailsDefault/MovieDetailsDefault';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
+import RMDetails from '../RMDetails/RMDetails';
+
 import './App.scss';
 
 import {
@@ -30,8 +32,6 @@ class App extends React.Component {
     this.apiKey = '745fff882d6434c78ae4843ae559ef06';
  }
 
-
-
   handleChange = (e) => {
       e.preventDefault();
       this.setState({ searchQuery: e.target.value 
@@ -49,6 +49,7 @@ class App extends React.Component {
             <Route exact path="/" component={ Home } />
             <Route exact path="/SignIn" component={ SignIn } />
             <Route exact path="/MovieDetails/:movieId" component={ MovieDetails } />
+            <Route exact path="/RelatedMovies/:id" component={ RMDetails } />
             <Route exact path="/Discover/:id" component={ SearchField } />
             <Route exact path="/PeopleModal" component={ PeopleModal } />
           </ScrollToTop>

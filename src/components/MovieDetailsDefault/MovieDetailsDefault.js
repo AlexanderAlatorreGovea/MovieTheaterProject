@@ -85,9 +85,7 @@ class MovieDetailsDefault extends React.Component {
     const ratings = this.state.rating;
     const movieGenres = this.state.details;
     const movieRatings = Math.round(this.state.popularity)
-    //const MovieDetailsConfig = this.props.location.state
     this.setRating(this.state.vote)
-
         return (
           <div className="MovieDetails" style={{background: 'white'}}>
             <Preloader />
@@ -214,10 +212,10 @@ class MovieDetailsDefault extends React.Component {
                     }
                     <Footer />
                     <div className="people-carrousel" style={{background: 'black'}}>
-                                <PeopleCarrousel 
-                                time={this.format()}
-                                backDrop={this.state.posters.file_path}
-                                movie_id={301528}/>      
+                        <PeopleCarrousel 
+                        time={this.format()}
+                        backDrop={this.state.posters.file_path}
+                        movie_id={301528}/>      
                     </div>
 
                     </div> {/* <!-- end description -->      */} 

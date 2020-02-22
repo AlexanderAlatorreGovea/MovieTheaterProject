@@ -3,7 +3,7 @@ import './MovieDetails.scss';
 import { 
     apiKey,
     baseUrl,
-    } from '../../apis/apiKey';
+} from '../../apis/apiKey';
 
 import axios from 'axios';
 import PeopleCarrousel from '../PeopleCarrousel/PeopleCarrousel';
@@ -11,6 +11,8 @@ import VideoModal from '../VideoModal/VideoModal';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
 import getMovieDetails from '../../actions/index';
+import RelatedMovies from '../RelatedMovies/RelatedMovies';
+
 import  { connect  } from 'react-redux';
  
 class MovieDetails extends React.Component {
@@ -23,7 +25,8 @@ class MovieDetails extends React.Component {
             posters: [],
             rating: '',
             showModal: false,
-            additionalDetails: []
+            additionalDetails: [],
+            relatedMovies: []
         };
         this.apiKey = '745fff882d6434c78ae4843ae559ef06'
      }
@@ -32,10 +35,16 @@ class MovieDetails extends React.Component {
      
     handleCloseModal = () => this.setState({showModal: false})
 
+    componentDidMount() {
+        const { id } = this.props.location.state.movie;
+        axios.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.apiKey}&language=en-US&page=1`).then(res => {
+            this.setState({
+                relatedMovies: res.data.results
+            })
+        });
 
-    componentWillMount() {
         axios.get(`${baseUrl}${this.props.location.state.movie.id}?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
-            this.setState({ 
+            this.setState({
                 details: res.data.genres,
                 videos: res.data.videos.results,
                 posters: res.data.images.posters[2],
@@ -44,8 +53,6 @@ class MovieDetails extends React.Component {
             })
         })
     }
-
-    
 
     format = (n) => {
         let num = this.state.additionalDetails.runtime;
@@ -67,16 +74,14 @@ class MovieDetails extends React.Component {
         });
       };
 
-
     render() {
-    const MovieDetailsConfig = this.props.location.state
+    const MovieDetailsConfig = this.props.location.state;
     const secondaryImage = this.state.posters.file_path;
     const ratings = this.state.rating;
     const movieGenres = this.state.details;
     const movieRatings = Math.round(MovieDetailsConfig.movie.popularity)
     this.setRating(MovieDetailsConfig.movie.vote_average)
-    console.log(this.props.location.state.movie)
-        return (
+    return (
         <div className="MovieDetails" style={{background: 'white'}}>
             <Preloader />
             <div className="movie-card" style={{background: 'white'}}>
@@ -91,11 +96,10 @@ class MovieDetails extends React.Component {
                                     <div className="video" onClick={this.handleShowModal}>
                                         <img className="play_AfXd1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/120px-YouTube_full-color_icon_%282017%29.svg.png" decoding="async" width="120" height="85" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/180px-YouTube_full-color_icon_%282017%29.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/240px-YouTube_full-color_icon_%282017%29.svg.png 2x" data-file-width="71" data-file-height="50" />
                                     </div>
-                                
                             </div>
                         </div>
                         <div className="hero" 
-                        style={{background:`url( ${MovieDetailsConfig.imgURL}/w1280/${MovieDetailsConfig.movie.poster_path})`}}>
+                        style={{background:`url(${MovieDetailsConfig.imgURL}/w1280/${MovieDetailsConfig.movie.poster_path})`}}>
                                 
                         <div className="details">
                             <div className="title__and--ratings">
@@ -107,8 +111,7 @@ class MovieDetails extends React.Component {
                             <div className="title2">1,119 Reviews<span className="break">
                             {new Date(this.state.additionalDetails.release_date).getFullYear()}</span>
                             <span className="break">{this.format()}</span> </div>    
-                            {this.handlePopularity
-                            }
+                            {this.handlePopularity}
                             <div className="rating">
                                 <svg className="star-rating-container__item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 372.686L380.83 448l-33.021-142.066L458 210.409l-145.267-12.475L256 64l-56.743 133.934L54 210.409l110.192 95.525L131.161 448z"/></svg>
                                 <svg className="star-rating-container__item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 372.686L380.83 448l-33.021-142.066L458 210.409l-145.267-12.475L256 64l-56.743 133.934L54 210.409l110.192 95.525L131.161 448z"/></svg>
@@ -117,35 +120,20 @@ class MovieDetails extends React.Component {
                                 <svg className="star-rating-container__item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 372.686L380.83 448l-33.021-142.066L458 210.409l-145.267-12.475L256 64l-56.743 133.934L54 210.409l110.192 95.525L131.161 448z"/></svg>
                                 <span className="likes"><i id="heart" className="red small heart icon"></i>{movieRatings} likes</span>
                             </div>
-                            
-                            
-                        </div> {/* <!-- end details -->    */}
-                        
-                        </div> {/* <!-- end hero -->      */} 
-                        
+                        </div>                         
+                        </div> 
                         <div className="description">
-                        
                         <div className="column1">
                             <span className="tag">{ movieGenres[0]  && movieGenres[0].name }</span> 
                             <span className="tag">{ movieGenres[1]  && movieGenres[1].name }</span>
                             <span className="tag">{ movieGenres[3] ? movieGenres[3].name : 'Thriller' }</span>
-                        </div>  {/* <!-- end column1 -->      */} 
-                        
-
+                        </div>  
                         <div className="column2">
-                            
                             <p>{`${MovieDetailsConfig.movie.overview}`}<span style={{paddingLeft: '4px'}}></span> <a >read more...</a></p>
-                            
                             <div className="avatars">
-                    
-
-                            
-                            </div> {/* <!-- end avatars -->      */} 
+                            </div> 
                             <span class="qB1pae"></span>
-        
-                            
-                        </div> {/* <!-- end column2 -->   */} 
-                        
+                        </div>      
                 <section className="production__info--section">
                     <div className="production__info">
                     <div className="production__info--wrapper">
@@ -165,7 +153,12 @@ class MovieDetails extends React.Component {
                                 <span>Marvel Studios, Walt Disney Pictures</span>
                             </div>
                         </div>
-
+                        {this.state.showModal &&
+                            <VideoModal
+                                onClose={this.handleCloseModal}
+                                videoCofing={this.state.videos[0]}
+                            />
+                        }
                         <div className="production__info--right">
                             <div className="info__right--placeholder">
                                 <span>Runtime</span>
@@ -193,28 +186,23 @@ class MovieDetails extends React.Component {
                         </ul>
                     </div>
                 </section>
-                {this.state.showModal &&
-                    <VideoModal 
-                    onClose={this.handleCloseModal}
-                    videoCofing={this.state.videos[0]}/>
-                }
                 <Footer />
                 <div className="people-carrousel" style={{background: 'black'}}>
-                            <PeopleCarrousel 
-                            time={this.format()}
-                            overview={MovieDetailsConfig.movie.overview}
-                            backDrop={MovieDetailsConfig.movie.backdrop_path}
-                            movie_id={MovieDetailsConfig.movie.id}/>      
+                    <PeopleCarrousel 
+                        time={this.format()} 
+                        overview={MovieDetailsConfig.movie.overview}
+                        backDrop={MovieDetailsConfig.movie.backdrop_path}
+                        movie_id={MovieDetailsConfig.movie.id}
+                    />      
                 </div>
-
-                        </div> {/* <!-- end description -->      */} 
-                        
-                    </div>  {/*  <!-- end container -->     */} 
-                 {/* begining of secondary section */}
-                </div>
- 
-                </div> {/* <!-- end movie-card -->      */} 
-          </div>
+                <RelatedMovies
+                    relatedMovies={this.state.relatedMovies}
+                />
+                    </div> 
+                </div>  
+            </div>
+        </div> 
+    </div>
       )
     }
   };

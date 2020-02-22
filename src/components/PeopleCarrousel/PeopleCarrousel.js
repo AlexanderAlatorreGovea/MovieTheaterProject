@@ -10,7 +10,6 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-
 function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -23,7 +22,7 @@ function NextArrow(props) {
       </div>
   );
 }
-
+ 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -38,27 +37,42 @@ function PrevArrow(props) {
 
 
 class PeopleCarrousel extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            people: [],
-            openModal: false,
-            openPeopleModal: false,
-            modalId: 0,
-            personImage: '',
-            name: '',
-            character: '',
-        };
-     }
-
-
-     componentWillMount() {
-        axios.get(`${baseUrl}${this.props.movie_id}/credits?api_key=${apiKey}`).then(res => {
-            this.setState({ 
-                people: res.data.cast
-            })
-        })
+  constructor(props) {
+      super(props);
+      this.state = {
+          people: [],
+          openModal: false,
+          openPeopleModal: false,
+          modalId: 0,
+          personImage: '',
+          name: '',
+          character: '',
+      };
     }
+
+  componentDidMount() {
+    axios.get(`${baseUrl}${this.props.movie_id}/credits?api_key=${apiKey}`).then(res => {
+        this.setState({ 
+            people: res.data.cast
+        })
+    })
+  }
+
+  upDatePeopleList = () => {
+    axios.get(`${baseUrl}${this.props.movie_id}/credits?api_key=${apiKey}`).then(res => {
+      this.setState({
+        people: res.data.cast
+      })
+    });
+
+    this.forceUpdate();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.movie_id !== this.props.movie_id) {
+      this.upDatePeopleList();
+    }
+  }
 
     showModal = (person) => this.setState({
       openModal: true,
@@ -72,7 +86,6 @@ class PeopleCarrousel extends React.Component {
 
 
     render() {
-        const { movie_id } = this.props
         const settings = {
             dots: false,
             infinite: true,
@@ -105,32 +118,29 @@ class PeopleCarrousel extends React.Component {
                    slidesToShow: 3,
                    slidesToScroll: 1
                  }
-               }
+               } 
              ]
           };
         return (
           <div className="PeopleCarrousel" style={{ background: 'white' }} >
             <h1 className="people__carousel--title">Cast</h1>
               <Slider {...settings}>
-                {  
-                this.state.people.map((person, index)=> {
-                if( index <= 10) {
-                return(
+                {this.state.people.map((person, index) => {
+                  if( index <= 10) {
+                  return(
                       <div key={index}>
-                        <div className='people__info'>                            <img 
-                                dataSet={index}
-                                onClick={this.showModal.bind(null, person)} className='people__info--image' style={{opacity: '1',  cursor: 'pointer'}} 
-                                src={ `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${person.profile_path ? person.profile_path : "/hYSoo0SAwr5vfh0jHU82JdBmP6V.jpg" }` } 
-                                alt='movie poster'
-                            />
+                        <div className='people__info'>                            
+                          <img 
+                            dataSet={index}
+                            onClick={this.showModal.bind(null, person)} className='people__info--image' style={{opacity: '1',  cursor: 'pointer'}} 
+                            src={ `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${person.profile_path ? person.profile_path : "/hYSoo0SAwr5vfh0jHU82JdBmP6V.jpg" }` } 
+                            alt='movie poster'
+                          />
                         </div>
                         <h3 className='people__info--name'>{person.name ? person.name : "Chris Geere"}</h3>
                         <h4 className='people__info--title'>{person.character ? person.character : "Roger Clifford" }</h4>
                       </div>
-                    )
-                }
-                }) 
-                }
+                )}})}
                </Slider>
                {this.state.openModal && 
                   <PeopleModal 

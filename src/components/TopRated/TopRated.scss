@@ -1,0 +1,18 @@
+.top-rated {
+    img {
+        width: 95%;
+        @media only screen and (min-width: 1200px) {
+            border-radius: 7px 7px 7px 7px;
+        }
+    }
+    .image, #image {
+        @media only screen and (min-width: 1440px) {
+            max-height: 354.81px;
+            width: 236.55px;
+            border-radius: 7px 7px 7px 7px;
+            &:hover {
+                border-radius: 7px 7px 7px 7px;
+            }
+        }
+    }
+}

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import  { connect  } from 'react-redux';
 import Slider from "react-slick";
 
+import './TopRated.scss';
+
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -20,7 +22,7 @@ function SampleNextArrow(props) {
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
+      <div 
         className={className}
         style={{ ...style, display: "block", background: "rgba(0,0,0,.5)" }}
         onClick={onClick}>
@@ -35,50 +37,68 @@ class TopRated extends Component {
     }
 
     render() {
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />,
-            responsive: [
-               {
-                 breakpoint: 1024,
-                 settings: {
-                   slidesToShow: 5,
-                   slidesToScroll: 4,
-                   infinite: true,
-                   dots: false
-                 }
-               },
-               {
-                 breakpoint: 600,
-                 settings: {
-                   slidesToShow: 4,
-                   slidesToScroll: 2,
-                   initialSlide: 1,
-                   infinite: true,
-                   dots: false
-                 }
-               },
-               {
-                 breakpoint: 480,
-                 settings: {
-                   slidesToShow: 3,
-                   slidesToScroll: 1,
-                   initialSlide: 0,
-                   infinite: true,
-                   dots: false
-                 }
-               }
-             ]
-          };
+      const settings = {
+          dots: false,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 7,
+          slidesToScroll: 3,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+          responsive: [
+            {
+              breakpoint: 1800,
+              settings: {
+                slidesToShow: 6,
+                slidesToScroll: 4,
+                infinite: true,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 1440,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 4,
+                infinite: true,
+                dots: false
+              }
+            },
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 5,
+                  slidesToScroll: 4,
+                  infinite: true,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 2,
+                  initialSlide: 1,
+                  infinite: true,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  initialSlide: 0,
+                  infinite: true,
+                  dots: false
+                }
+              }
+            ] 
+        };
         
         const imgURL= 'http://image.tmdb.org/t/p/';
         return (
-            <div>
+            <div className="top-rated">
             <section className="slider-divider">
                <div className="movie--category">
                   <span className="movie--category__title">
@@ -89,9 +109,8 @@ class TopRated extends Component {
                   </span>
                 </div>
                   <Slider {...settings}>
-                     {
-                        this.props.topRatedMovies.map((movie, index)=> {
-                        if( index < 10) {
+                     {this.props.topRatedMovies.map((movie, index)=> {
+                        if( index < 15) {
                         return(
                            <Link 
                               to={{
@@ -114,13 +133,10 @@ class TopRated extends Component {
                                  </div>
                                </div>
                               <div className='image'>
-                              <img style={{width: '95%' }} 
-                              key={ movie.id }  src={ imgURL + 'w300' + movie.poster_path } alt='movie poster' />
+                              <img id='img' key={ movie.id }  src={ imgURL + 'w300' + movie.poster_path } alt='movie poster' />
                               </div>
                            </Link>
-                           )
-                        }
-                        }) }
+                           )}})}
                </Slider>
            </section>
             </div>

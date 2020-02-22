@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import  { connect  } from 'react-redux';
 import Slider from "react-slick";
 
+import './Upcoming.scss';
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -37,50 +38,68 @@ class Upcoming extends Component {
     }
 
     render() {
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />,
-            responsive: [
-               {
-                 breakpoint: 1024,
-                 settings: {
-                   slidesToShow: 5,
-                   slidesToScroll: 4,
-                   infinite: true,
-                   dots: false
-                 }
-               },
-               {
-                 breakpoint: 600,
-                 settings: {
-                   slidesToShow: 4,
-                   slidesToScroll: 2,
-                   initialSlide: 1,
-                   infinite: true,
-                   dots: false
-                 }
-               },
-               {
-                 breakpoint: 480,
-                 settings: {
-                   slidesToShow: 3,
-                   slidesToScroll: 1,
-                   initialSlide: 0,
-                   infinite: true,
-                   dots: false
-                 }
-               }
-             ]
-          };
+      const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 7,
+        slidesToScroll: 3,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+          {
+            breakpoint: 1800,
+            settings: {
+              slidesToShow: 6,
+              slidesToScroll: 4,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 1440,
+            settings: {
+              slidesToShow: 5,
+              slidesToScroll: 4,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 5,
+              slidesToScroll: 4,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              initialSlide: 0,
+              infinite: true,
+              dots: false
+            }
+          }
+        ]
+      };
         
         const imgURL= 'http://image.tmdb.org/t/p/';
         return (
-            <div>
+            <div className="upcoming">
             <section className="slider-divider">
                <div className="movie--category">
                   <span className="movie--category__title">
@@ -93,9 +112,6 @@ class Upcoming extends Component {
                   <Slider {...settings}>
                      {
                         this.props.upcomingMovies.map((movie, index)=> {
-
-                        const movieImages =   this.props.upcomingMovies.filter((i) => {return i = 10 })
-
                         if( index < 10) {
                         return(
                            <Link 

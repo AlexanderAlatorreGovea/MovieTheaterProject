@@ -7,10 +7,9 @@ const MovieList = (props) => {
         const strArr = props.title.split(' ');
         return strArr.length < length ? str : strArr.filter((word, i) => i < length).join(' ') + '...';
     }
-
+    console.log(props)
     return(
         <div className="MovieCard" style={{margin: '0', padding: '0'}}>
-            
             <div className="MovieCard__container">
                  { props.image == null ? 
                     <div className="MovieCard--wrapper">

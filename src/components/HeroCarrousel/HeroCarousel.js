@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './HeroCarousel.scss'
+import './HeroCarousel.scss';
 import  { connect  } from 'react-redux';
 import { fetchNowplayingMovies } from '/Users/test/movietheaterprojectmaster/src/actions/index.js';
 import { Link } from 'react-router-dom';
@@ -46,45 +46,64 @@ class HeroCarousel extends React.Component {
 
     render() { 
       const settings = {
-         dots: false,
-         infinite: true,
-         speed: 500,
-         slidesToShow: 5,
-         slidesToScroll: 3,
-         prevArrow: <SamplePrevArrow />,
-         nextArrow: <SampleNextArrow />,
-         responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 5,
-                slidesToScroll: 4,
-                infinite: true,
-                dots: false
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 2,
-                initialSlide: 1,
-                infinite: true,
-                dots: false
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                initialSlide: 0,
-                infinite: true,
-                dots: false
-              }
-            }
+          dots: false,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 7,
+          slidesToScroll: 3,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+          responsive: [
+             {
+                breakpoint: 1800,
+                settings: {
+                   slidesToShow: 6,
+                   slidesToScroll: 4,
+                   infinite: true,
+                   dots: false
+                }
+             },
+             {
+                breakpoint: 1440,
+                settings: {
+                   slidesToShow: 5,
+                   slidesToScroll: 4,
+                   infinite: true,
+                   dots: false
+                }
+             },
+             {
+                breakpoint: 1024,
+                settings: {
+                   slidesToShow: 5,
+                   slidesToScroll: 4,
+                   infinite: true,
+                   dots: false
+                }
+             },
+             {
+                breakpoint: 600,
+                settings: {
+                   slidesToShow: 4,
+                   slidesToScroll: 2,
+                   initialSlide: 1,
+                   infinite: true,
+                   dots: false
+                }
+             },
+             {
+                breakpoint: 480,
+                settings: {
+                   slidesToShow: 3,
+                   slidesToScroll: 1,
+                   initialSlide: 0,
+                   infinite: true,
+                   dots: false
+                }
+             }
           ]
        };
+
       const imgURL= 'http://image.tmdb.org/t/p/';
        return (
           <div >
@@ -95,11 +114,10 @@ class HeroCarousel extends React.Component {
                   </span>
                   <span className="movie--category__explore">
                   &nbsp;Explore All
-                  </span>
+                  </span> 
                 </div>
                   <Slider {...settings}>
-                     {   
-                        this.props.nowPlayingMovies.map((movie, index)=> {
+                     {this.props.nowPlayingMovies.map((movie, index)=> {
                         this.props.nowPlayingMovies.filter((i) => {return i = 10 })
                         if( index < 10) {
                         return(
@@ -110,7 +128,7 @@ class HeroCarousel extends React.Component {
                                     imgURL: imgURL,
                                     key: movie.id,
                                     movie: movie
-                                 }
+                                 } 
                               }}
                            >
                                <div className="movie-details--home">
@@ -130,9 +148,7 @@ class HeroCarousel extends React.Component {
                                  />
                               </div>
                            </Link>
-                           )} 
-                           }) 
-                        }
+                        )}})}
                </Slider>
            </section>
             <TopRated />
