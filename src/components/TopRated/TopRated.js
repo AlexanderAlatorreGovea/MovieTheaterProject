@@ -118,7 +118,7 @@ class TopRated extends Component {
                                  state: {
                                     imgURL: imgURL,
                                     key: movie.id,
-                                    movie: movie
+                                    movie: movie 
                                  }
                               }}
                            >

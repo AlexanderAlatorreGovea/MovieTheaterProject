@@ -33,9 +33,10 @@ class App extends React.Component {
  }
 
   handleChange = (e) => {
-      e.preventDefault();
+    e.preventDefault();
       this.setState({ searchQuery: e.target.value 
-  })}
+    })
+  }
 
   closeSearchBar  = () => this.setState({toggleSearchBar: true})
 
