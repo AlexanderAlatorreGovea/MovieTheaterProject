@@ -12,7 +12,7 @@ import './App.scss';
 
 import {
   Route,
-  Link,
+  NavLink,
   BrowserRouter as Router,
   Switch,
   Redirect  
@@ -61,7 +61,9 @@ class App extends React.Component {
                             placeholder='search for movies...'
                             onChange={this.handleChange}
                             aria-describedby="name-desc" />
-                        <Link
+                        <NavLink
+                          activeClassName="selected"
+                          activeStyle={{ color: "#2196f3" }}
                            to={{
                             pathname: `/Discover/${this.state.searchQuery}`,
                             state: {
@@ -70,16 +72,16 @@ class App extends React.Component {
                           <button type="submit" className="main-nav-search-form__button">
                             <i id="search" class="white large search icon svg"></i>
                           </button>
-                        </Link>
+                        </NavLink>
                     </div>
                 </form> 
             </div>
         <nav className="main-nav" style={{zIndex: '30000'}}>
           <ul className="main-nav__icons" style={{display: 'flex', listStyleType: 'none'}}>
-            <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i  id="home-icon"  className="white big home icon"></i></Link></li>
-            <li className="main-nav__icon" onClick={this.closeSearchBar} ><Link to={{pathname: "/MovieDetailsDefault", state: {displaySingIn: this.state.displaySingIn }}}><i id="home-icon" class="big white film icon"></i> </Link></li>
+            <li className="main-nav__icon" onClick={this.closeSearchBar} ><NavLink exact={true} activeStyle={{ color: "#2196f3"}} activeClassName="selected" to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i  id="home-icon"  className="white big home icon"></i></NavLink></li>
+            <li className="main-nav__icon" onClick={this.closeSearchBar} ><NavLink activeStyle={{ color: "#2196f3" }} activeClassName="selected" to={{pathname: "/MovieDetailsDefault", state: {displaySingIn: this.state.displaySingIn }}}><i id="home-icon" class="big white film icon"></i> </NavLink></li>
             <li className="main-nav__icon" onClick={this.toggleSearchBar} ><i  id="home-icon" className="big white search icon"></i></li>
-            <li className="main-nav__icon" ><Link to="/SignIn"><i id="home-icon"  class="big white users icon"></i></Link></li>
+            <li className="main-nav__icon" ><NavLink activeStyle={{ color: "#2196f3" }} activeClassName="selected" to="/SignIn"><i id="home-icon"  class="big white users icon"></i></NavLink></li>
           </ul>
         </nav>
       </Router>

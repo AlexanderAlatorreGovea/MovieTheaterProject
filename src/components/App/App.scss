@@ -40,7 +40,7 @@
         padding-top: 1rem;
       }
         .home{
-          color: #2196f3;
+          color: white;
         }
         &:hover{
             cursor: pointer;
@@ -54,6 +54,11 @@
     }
 }
 
+.selected {
+  i {
+    color: #2196f3 !important;
+  }
+}
 /*********************SEARCHBAR NAV*******************************/
 
 .pa  {

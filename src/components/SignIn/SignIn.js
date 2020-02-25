@@ -2,28 +2,70 @@ import React, { Component } from 'react';
 import './SignIn.scss';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
+import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            toggleSignIn: false
+            toggleSignIn: false,
+            name: '',
+            email: '',
+            password: '',
+            token: null
         }
-     }
+        this.apiKey = '745fff882d6434c78ae4843ae559ef06';
+    } 
+
+    onChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
+
+    onSubmit = async e => {
+        e.preventDefault();
+
+        const URL = `https://api.themoviedb.org/3/authentication/guest_session/new?api_key=${this.apiKey}`
+
+        const { name, email, password } = this.state;
+
+        if (!name && !email && !password) return;
+
+        try {
+            const res = await axios({
+                method: 'GET',
+                url: URL
+            });
+            if (res.data.success == true) {
+                alert('You are now signed up');
+                window.location.reload();
+            }
+        } catch (err) {
+            if (err) {
+                alert('error', 'Error logging out! Try again.');
+            }
+        }
+    };
+
+    componentDidUpdate(prevProps, prevState) {
+        // if (this.state.token !== null) {
+        //     window.location.assign(`https://www.themoviedb.org/authenticate/${this.state.token}`)
+        // }
+        console.log(prevState)
+    }
      
-     
-
-
-    toggleSignInView  = () => this.setState({ toggleSignIn: !this.state.toggleSignIn })
-
+    toggleSignInView  = () => this.setState({ 
+        toggleSignIn: !this.state.toggleSignIn 
+    })
 
     render() {
+        console.log(this.state.token)
         return (
                 <div className="SignIn">
                         <h1 className="main-title">Sign In / Sign Up</h1>
                             <div className={`container ${this.state.toggleSignIn ? 'right-panel-active' : '' }`} id="container">
                                 <div className="form-container sign-up-container">
-                                    <form >
+                                    <form onSubmit={this.onSubmit}>
                                         <h1 className="form-title">Create Account</h1>
                                         <div className="social-container">
                                             <a className="social"><i class="facebook f icon"></i></a>
@@ -31,9 +73,9 @@ class SignIn extends Component {
                                             <a className="social"><i class="linkedin icon"></i></a>
                                         </div>
                                         <span>or use your email for registration</span>
-                                        <input type="text" placeholder="Name" />
-                                        <input type="email" placeholder="Email" />
-                                        <input type="password" placeholder="Password" />
+                                        <input onChange={this.onChange} type="name" name="name" placeholder="Name" />
+                                        <input onChange={this.onChange} type="email" name="email" placeholder="Email" />
+                                        <input onChange={this.onChange} type="password" name="password" placeholder="Password" />
                                         <button className="btn">Sign Up</button>
                                     </form>
                                 </div>

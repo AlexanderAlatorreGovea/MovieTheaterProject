@@ -1,9 +1,9 @@
 @import '../../styles/_variables.scss';
 
 .SearchField {
-    .MovieList{
+    .MovieList {
         margin-top: 9.3rem; 
-        .searchField-title{
+        .searchField-title {
             color: $titleColor;
             padding-left: 2rem;
             font-family: $secondary-font;
@@ -14,6 +14,70 @@
                 padding: 2.5rem 14.5rem;
             } 
         }
+        .buttons-search#buttons-search {
+            display: flex !important;
+            flex-direction: row;
+            margin: 0 auto;
+            padding: 2.5rem 14.5rem;
+            justify-content: center;
+            button {
+                display: flex;
+                align-items: center;
+                padding-left: 30px;
+                width: 8rem;
+                &:hover {
+                svg {
+                    path {
+                        fill: black !important;    
+                        }
+                    }
+                }
+                &:focus {
+                    outline-color: -webkit-focus-ring-color;
+                    outline-style: auto;
+                }
+            }
+            .previous#previous {
+                padding: 20px;
+                color: white;
+                background-color: #eb4e7a;
+                text-transform: uppercase;
+                cursor: pointer;
+                font-family: 'Alegreya Sans', sans-serif;
+                font-size: 1rem;
+                svg {
+                    path {
+                            &:hover {
+                                fill: black !important;
+                            }
+                        }
+                    }
+                &:hover {
+                    background: white;
+                    color: black;
+                }
+            }
+            .next-search#next-search {
+                padding: 20px;
+                color: white;
+                background-color: #eb4e7a;
+                text-transform: uppercase;
+                cursor: pointer;
+                font-family: 'Alegreya Sans', sans-serif;
+                font-size: 1rem;
+                svg {
+                    path {
+                        &:hover {
+                            fill: black !important;
+                        }
+                    }
+                }
+                &:hover {
+                    background: white;
+                    color: black;
+                }
+            }
+        }
         .MovieList-Wrapper{
             padding: 2.5rem 1.5rem;
             display: flex;
@@ -22,27 +86,13 @@
             @media (min-width: 1200px){
                 padding: 2.5rem 14.5rem;
             }
-        }   
+        }    
         .footer {
             @media (min-width: 1200px){
                 padding-left: 14rem;
             }
         } 
     }
-     button, .buttons {
-            display: flex;
-            flex-direction: row; 
-            margin: 0 auto;
-            .prev, .next {
-                padding: 20px;
-                color: white;
-                background: red;
-                &:hover {
-                    background: grey;
-                    color: red;
-                }
-            }
-        }
 }
  
 

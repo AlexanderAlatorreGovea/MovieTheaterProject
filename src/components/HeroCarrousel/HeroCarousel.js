@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './HeroCarousel.scss';
 import  { connect  } from 'react-redux';
 import { fetchNowplayingMovies } from '/Users/test/movietheaterprojectmaster/src/actions/index.js';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Upcoming from '../Upcoming/Upcoming';
 import PopularCarousel from '../PopularCarousel/PopularCarousel'
 import TopRated from '../TopRated/TopRated';
@@ -121,7 +121,8 @@ class HeroCarousel extends React.Component {
                         this.props.nowPlayingMovies.filter((i) => {return i = 10 })
                         if( index < 10) {
                         return(
-                           <Link 
+                           <NavLink
+                              activeClassName="selected"
                               to={{
                                  pathname: `/MovieDetails/${movie.id}`,
                                  state: {
@@ -147,7 +148,7 @@ class HeroCarousel extends React.Component {
                                        alt='movie poster'
                                  />
                               </div>
-                           </Link>
+                           </NavLink>
                         )}})}
                </Slider>
            </section>
