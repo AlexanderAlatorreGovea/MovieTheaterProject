@@ -7,6 +7,7 @@ import SignIn from '../SignIn/SignIn';
 import MovieDetailsDefault from '../MovieDetailsDefault/MovieDetailsDefault';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import RMDetails from '../RMDetails/RMDetails';
+import GuestSession from '../GuestSession/GuestSession';
 
 import './App.scss';
 
@@ -53,6 +54,7 @@ class App extends React.Component {
             <Route exact path="/RelatedMovies/:id" component={ RMDetails } />
             <Route exact path="/Discover/:id" component={ SearchField } />
             <Route exact path="/PeopleModal" component={ PeopleModal } />
+            <Route exact path="/GuestSession" component={ GuestSession} />
           </ScrollToTop>
           <div className="search-item">
                 <form style={{zIndex: '300000'}} class={`pa ${this.state.toggleSearchBar ? 'hide' : 'show'}`}>
@@ -78,7 +80,7 @@ class App extends React.Component {
             </div>
         <nav className="main-nav" style={{zIndex: '30000'}}>
           <ul className="main-nav__icons" style={{display: 'flex', listStyleType: 'none'}}>
-            <li className="main-nav__icon" onClick={this.closeSearchBar} ><NavLink exact={true} activeStyle={{ color: "#2196f3"}} activeClassName="selected" to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i  id="home-icon"  className="white big home icon"></i></NavLink></li>
+            <li className="main-nav__icon" onClick={this.closeSearchBar} ><NavLink exact={true} activeClassName="selected" activeStyle={{ color: "#2196f3"}}  to={{pathname: "/", state: {displaySingIn: this.state.displaySingIn }}}><i  id="home-icon"  className="white big home icon"></i></NavLink></li>
             <li className="main-nav__icon" onClick={this.closeSearchBar} ><NavLink activeStyle={{ color: "#2196f3" }} activeClassName="selected" to={{pathname: "/MovieDetailsDefault", state: {displaySingIn: this.state.displaySingIn }}}><i id="home-icon" class="big white film icon"></i> </NavLink></li>
             <li className="main-nav__icon" onClick={this.toggleSearchBar} ><i  id="home-icon" className="big white search icon"></i></li>
             <li className="main-nav__icon" ><NavLink activeStyle={{ color: "#2196f3" }} activeClassName="selected" to="/SignIn"><i id="home-icon"  class="big white users icon"></i></NavLink></li>

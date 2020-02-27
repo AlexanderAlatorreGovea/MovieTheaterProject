@@ -81,7 +81,7 @@ class SearchField extends React.Component {
         <div className="SearchField" >
             <div className="MovieList" style={{paddingLeft: '3rem'}}>
                 <div className="searchField-title">
-                    <span>Results For:&nbsp; {`${this.props.match.params.id}`} </span>
+                    <span>{this.state.movies.length} Results For:&nbsp; {`${this.props.match.params.id}`} </span>
                 </div>
                 <div className="MovieList-Wrapper">
                     {this.state.movies.length > 0 && this.state.movies.map((item, i) => {

@@ -1,0 +1,161 @@
+.guest-session {
+    margin-left: 4rem;
+    @media screen and (max-width: 768px){
+        margin-left: 0;
+    }
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
+    aside {
+        background: -webkit-linear-gradient(324deg, rgba(200, 49, 215, 0.3) -6%, rgba(13, 38, 43, 0.3) 26%);
+        @media screen and (max-width: 600px) {
+            order: -1;
+        }
+        .profile {
+                padding-top: 5rem;
+                width: 100%;
+                display: flex;
+                margin: 0 auto; 
+                img {
+                    border-radius: 50%;
+                    height: 166px;
+                    width: 170px;
+                    margin: 0 auto;
+                    opacity: none !important;
+                }
+        }
+        h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: white;
+            padding-bottom: 1rem;
+            letter-spacing: 10px;
+            padding-top: 2rem;
+        }
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            padding-bottom: 1rem;
+            letter-spacing: 5px;
+        }
+        h1, h2, button {
+            margin: 0 auto;
+            align-items: center;
+            line-height: 2;
+        }
+        h1, h2 { 
+            text-align: center;
+        }
+        button {
+            display: flex;
+            margin: 0 auto;
+            background: none;
+            border: 2px solid #eb4e7a;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Alegreya Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin: 1rem auto;
+            outline: none;
+            width: 173px;
+            height: 57px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 11px 30px 11px 43px;
+            margin-top: 2rem;
+            transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+            &:hover {
+                background-color: #fff;
+                border-color: #fff;
+                color: #000;
+            }
+        }
+    }
+    .ratings {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-row-gap: 10px;
+        padding-top: 20px;
+        margin: 1rem;
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
+        .ratings-container {
+            display: grid;
+            color: white;
+            align-items: center;
+            background-color: #1c262b;
+            border-radius: 5px;
+            grid-template-columns: 55px 1fr;
+            padding: 2.5rem 0.5rem;
+            text-align: center;
+            margin: 5px;
+                svg {
+                background-color: #111617;
+                border-radius: 50%;
+                fill: rgba(255, 255, 255, 0.8);
+                padding: 1rem;
+                width: 53px;
+                path {
+                    width: 20px;
+                    fill: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
+        }
+    .profile-ratings {
+        display: grid;
+        grid-template-columns: 25% 1fr;
+        @media screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .ratings-favorite {
+        background-color: #111617;
+        font-family: white;
+        font-size: 1.15rem;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        .favorite {
+            background: -webkit-linear-gradient(285deg, #251431 0%, #161130 22%);
+            height: 100%;
+            padding-bottom: 2rem;
+            text-align: center;
+            color: white;
+            .favorite-container {
+                margin-bottom: 4rem;
+                padding-top: 4rem;
+            }
+            h1, h4 { 
+                font-family: 'Alegreya Sans', sans-serif;
+                letter-spacing: 0.5rem;
+                padding: 1rem;
+                text-transform: uppercase;
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            hr {
+                border-color: #eb4e7a;
+                margin-top: -1rem;
+                width: 80px;
+                margin: 0 auto;
+            }
+            h4 {
+                padding: 2rem;
+                color: #eb4e7a;
+                font-family: 'Alegreya Sans', sans-serif;
+                text-align: center;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

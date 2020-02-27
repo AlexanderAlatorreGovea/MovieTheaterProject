@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
+import { showAlert } from '../../utils/alerts'; 
 
 class SignIn extends Component {
     constructor(props) {
@@ -13,7 +14,9 @@ class SignIn extends Component {
             name: '',
             email: '',
             password: '',
-            token: null
+            token: null,
+            signInEmail: '',
+            signInPassword: ''
         }
         this.apiKey = '745fff882d6434c78ae4843ae559ef06';
     } 
@@ -37,22 +40,47 @@ class SignIn extends Component {
                 url: URL
             });
             if (res.data.success == true) {
-                alert('You are now signed up');
-                window.location.reload();
+                showAlert('success', 'You are now signed up');
+                window.location.assign('/GuestSession')
             }
         } catch (err) {
             if (err) {
-                alert('error', 'Error logging out! Try again.');
+                showAlert('error', 'Error signing up! Try again');
             }
         }
     };
 
-    componentDidUpdate(prevProps, prevState) {
-        // if (this.state.token !== null) {
-        //     window.location.assign(`https://www.themoviedb.org/authenticate/${this.state.token}`)
-        // }
-        console.log(prevState)
-    }
+    signIn = async e => {
+        e.preventDefault();
+
+        const URL = `https://api.themoviedb.org/3/authentication/guest_session/new?api_key=${this.apiKey}`
+
+        const { email, password, signInEmail, signInPassword } = this.state;
+
+        if (email === signInEmail && password === signInPassword) {
+            try {
+                const res = await axios({
+                    method: 'GET',
+                    url: URL
+                });
+                if (res.data.success == true) {
+                    showAlert('success', 'You are now signed in');
+                    window.location.assign('/GuestSession')
+                }
+            } catch (err) {
+                if (err) {
+                    showAlert('error', 'Error logging in! Try again!');
+                }
+            }
+        }
+    };
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     // if (this.state.token !== null) {
+    //     //     window.location.assign(`https://www.themoviedb.org/authenticate/${this.state.token}`)
+    //     // }
+    //     console.log(prevState)
+    // }
      
     toggleSignInView  = () => this.setState({ 
         toggleSignIn: !this.state.toggleSignIn 
@@ -88,10 +116,10 @@ class SignIn extends Component {
                                             <a className="social"><i class="linkedin icon"></i></a>
                                         </div>
                                         <span>or use your account</span>
-                                        <input type="email" placeholder="Email" />
-                                        <input type="password" placeholder="Password" />
+                                        <input onChange={this.onChange} name="signInEmail" type="email" placeholder="Email" />
+                                        <input onChange={this.onChange} name="signInPassword" type="password" placeholder="Password" />
                                         <a>Forgot your password?</a>
-                                        <button className="btn">Sign In</button>
+                                        <button onClick={this.signIn} className="btn">Sign In</button>
                                     </form> 
                                 </div>
                                 <div className="overlay-container">
