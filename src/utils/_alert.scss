@@ -44,7 +44,7 @@ $success-text: #597151;
   color: $error-text;
   .fa-check {
     visibility: hidden;
-  }
+  } 
 }
 
 .success {
@@ -55,3 +55,8 @@ $success-text: #597151;
     display: none
   }
 }
+
+.success + .fa-check {
+  visibility: visible !important;
+}
+

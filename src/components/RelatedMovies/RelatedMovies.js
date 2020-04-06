@@ -78,7 +78,7 @@ class RelatedMovies extends Component {
                 }
             ]
         };
-
+        console.log(this.props)
         const imgURL = 'http://image.tmdb.org/t/p/';
         return (
             <div className="related-movies">

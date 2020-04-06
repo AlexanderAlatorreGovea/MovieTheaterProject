@@ -101,16 +101,31 @@
     -o-transition: all 2s ease; /* Opera */
     transition: all 2s ease;
     overflow: hidden;
+    border-radius: 7px 7px 7px 7px;
     #image {
         width: 95%;
         position: relative; 
+        border-radius: 7px 7px 7px 7px;
+
         @media only screen and (min-width: 1440px){
             max-height: 354.81px;
             width: 236.55px;
             border-radius: 7px 7px 7px 7px;
         }
+        &:hover {
+            transition: all 0.7s ease;
+            -webkit-transform: scale(1.25); /* Safari and Chrome */
+            -moz-transform: scale(1.25); /* Firefox */
+            -ms-transform: scale(1.25); /* IE 9 */
+            -o-transform: scale(1.25); /* Opera */
+            transform: scale(1.05);
+            opacity: 1;
+            border-radius: 7px 7px 7px 7px;
+        }
+
     }
     img {
+        border-radius: 7px 7px 7px 7px;
         @media only screen and (min-width: 1200px) {
             border-radius: 7px 7px 7px 7px;
         }
@@ -123,6 +138,7 @@
             -o-transform:scale(1.25); /* Opera */
             transform:scale(1.05);
            opacity: 1;
+           border-radius: 7px 7px 7px 7px;
         }
     }
 }

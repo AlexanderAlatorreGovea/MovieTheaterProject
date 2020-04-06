@@ -8,7 +8,7 @@ const GuestSession = () => {
     const logOut = () => {
         showAlert('success', 'You are now logged out');
         window.location.assign('/')
-    }
+    } 
     
     return (
         <div className="guest-session">

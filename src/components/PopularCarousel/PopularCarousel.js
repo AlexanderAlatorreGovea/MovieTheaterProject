@@ -32,7 +32,7 @@ function SampleNextArrow(props) {
   }
 
 class PopularCarousel extends Component {
-    componentWillMount(){
+    componentDidMount(){
         console.log(this.props.fetchPopularMovies())
      }
 

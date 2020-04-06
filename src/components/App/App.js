@@ -15,11 +15,8 @@ import {
   Route,
   NavLink,
   BrowserRouter as Router,
-  Switch,
-  Redirect  
 } from 'react-router-dom';
 import axios from 'axios';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -74,7 +71,7 @@ class App extends React.Component {
                           <button type="submit" className="main-nav-search-form__button">
                             <i id="search" class="white large search icon svg"></i>
                           </button>
-                        </NavLink>
+                        </NavLink> 
                     </div>
                 </form> 
             </div>

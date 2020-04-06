@@ -81,28 +81,32 @@
 /*********************SEARCH BAR ANIMATIONS*******************************/
 
 
-  .hide{
-    transform: translate3d(-100vw, 0, 0);
-    transition: transform .3s cubic-bezier(0, .52, 0, 1);
-  }
-  
-  .show {
-    transform: translate3d(0vw, 0, 0);
-    transition: transform .4s cubic-bezier(0, .52, 0, 1);
-  }
+.hide{
+  transform: translate3d(-100vw, 0, 0);
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
 
-  .measure__ {
-      width: 250px;
-  }
-  
-  #name{
-      background-color: white;
-  }
+.show {
+  transform: translate3d(0vw, 0, 0);
+  transition: transform .4s cubic-bezier(0, .52, 0, 1);
+}
 
-  input{
-      border-radius: 20px;
-      color: black;
-  }
+.measure__ {
+    width: 250px;
+}
+
+#name{
+    background-color: white;
+}
+
+input{
+    border-radius: 20px;
+    color: black;
+}
+
+#search {
+  color: white !important;
+}
   
 /*********************SEARCH BAR COMPONENTS*******************************/
 

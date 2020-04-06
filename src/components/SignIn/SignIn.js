@@ -3,7 +3,7 @@ import './SignIn.scss';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
 import axios from 'axios';
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import { showAlert } from '../../utils/alerts'; 
 
 class SignIn extends Component {
@@ -41,7 +41,8 @@ class SignIn extends Component {
             });
             if (res.data.success == true) {
                 showAlert('success', 'You are now signed up');
-                window.location.assign('/GuestSession')
+                //window.location.assign('/GuestSession')
+                this.props.history.push("/GuestSession");
             }
         } catch (err) {
             if (err) {
@@ -63,9 +64,10 @@ class SignIn extends Component {
                     method: 'GET',
                     url: URL
                 });
-                if (res.data.success == true) {
+                if (res.data.success === true) {
                     showAlert('success', 'You are now signed in');
-                    window.location.assign('/GuestSession')
+                    //window.location.assign('/GuestSession')
+                    this.props.history.push("/GuestSession");
                 }
             } catch (err) {
                 if (err) {
@@ -155,4 +157,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default withRouter(SignIn);

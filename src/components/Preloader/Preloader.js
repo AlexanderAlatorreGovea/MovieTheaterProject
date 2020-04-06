@@ -2,11 +2,6 @@ import React from 'react';
 import './Preloader.scss';
 
 class Preloader extends React.Component{
-    constructor(props) {
-        super(props)
-
-    }
-
     componentDidMount() {
         setTimeout(() => {
           document.querySelector('.loader-container').style.transition = 'opacity 5s';
@@ -15,7 +10,6 @@ class Preloader extends React.Component{
           setTimeout(() => {
             document.querySelector('.loader-container').remove();
           }, 1000);
-    
         }, 2000);
       }
 

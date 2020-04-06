@@ -37,9 +37,7 @@ class MovieDetailsDefault extends React.Component {
      
     handleCloseModal = () => this.setState({showModal: false})
 
-    
-
-    componentWillMount() {
+    componentDidMount() {
         axios.get(`${baseUrl}301528?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
             this.setState({ 
                 details: res.data.genres,
@@ -77,8 +75,6 @@ class MovieDetailsDefault extends React.Component {
           }
         });
       };
-
-
 
     render() {
     const secondaryImage = this.state.posters.file_path;

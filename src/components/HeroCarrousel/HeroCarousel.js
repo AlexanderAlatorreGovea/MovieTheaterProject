@@ -40,7 +40,7 @@ class HeroCarousel extends React.Component {
        super(props);
        this.state = {};
     }
-    componentWillMount(){
+    componentDidMount(){
       console.log(this.props.fetchNowplayingMovies())
    }
 
@@ -129,7 +129,7 @@ class HeroCarousel extends React.Component {
                                     imgURL: imgURL,
                                     key: movie.id,
                                     movie: movie
-                                 } 
+                                 }  
                               }}
                            >
                                <div className="movie-details--home">

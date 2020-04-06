@@ -32,7 +32,7 @@ function SampleNextArrow(props) {
   }
 
 class TopRated extends Component {
-    componentWillMount(){
+    componentDidMount(){
         console.log(this.props.fetchTopRatedMovies())
     }
 

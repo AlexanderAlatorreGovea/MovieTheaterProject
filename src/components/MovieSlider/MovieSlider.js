@@ -39,7 +39,7 @@ class MovieSlider extends React.Component {
         };
     }
     
-    componentWillMount() {
+    componentDidMount() {
       axios.get(`${baseUrl}301528?api_key=${apiKey}&append_to_response=videos,details,images,movie_id`).then(res => {
           this.setState({ 
               details: res.data.genres,

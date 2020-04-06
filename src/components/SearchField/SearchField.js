@@ -16,16 +16,17 @@ class SearchField extends React.Component {
            movies: [], 
            page_num: 1,
            total_pages: null,
-           query: null
+           query: null,
+           total_results: 0
        };
        this.myRef = React.createRef() 
        this.apiKey = '745fff882d6434c78ae4843ae559ef06'
     }
-
-    fetchMovies(search) {
-        fetch(URL + `${this.apiKey}` + language + query + search + "&page=" + this.state.page_num)
+ 
+    fetchMovies = (search) => {
+         return fetch(URL + `${this.apiKey}` + language + query + search + "&page=" + this.state.page_num)
             .then(res => res.json())
-            .then(json => this.setState({ movies: json.results, total_pages: json.total_pages, query: this.props.match.params.id }));
+            .then(json => this.setState({ movies: json.results, total_pages: json.total_pages, query: this.props.match.params.id, total_results: json.total_results }));
     }
 
     filterSearch = event => {
@@ -53,10 +54,14 @@ class SearchField extends React.Component {
         this.forceUpdate();
     }
 
-    componentWillUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         if (this.props.match.params.id !== prevState.query ) {
             this.filterSearch();
         }
+    }
+    
+    componentDidMount() {
+        this.fetchMovies();
     }
 
     truncateTitle = (title, limit = 20) => {
@@ -75,16 +80,20 @@ class SearchField extends React.Component {
       }
     
    render() {
-       this.props.searchData(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.props.match.params.id}`);
        const imgURL = 'http://image.tmdb.org/t/p/';
+       const { movies, total_results } = this.state;
+       const query = this.props.match.params.id[0].toUpperCase() + this.props.match.params.id.substr(1);
        return (
         <div className="SearchField" >
             <div className="MovieList" style={{paddingLeft: '3rem'}}>
                 <div className="searchField-title">
-                    <span>{this.state.movies.length} Results For:&nbsp; {`${this.props.match.params.id}`} </span>
+                       <span>
+                            {total_results} Results For:&nbsp; 
+                            {query}
+                       </span>
                 </div>
                 <div className="MovieList-Wrapper">
-                    {this.state.movies.length > 0 && this.state.movies.map((item, i) => {
+                    {movies.length > 0 && movies.map((item, i) => {
                         return (
                             <div className="MovieCard" style={{ margin: '0', padding: '0' }}>
                                 <div className="MovieCard__container">
@@ -112,29 +121,35 @@ class SearchField extends React.Component {
                         )
                     })}
                 </div>
-                   <div className="buttons-search" id="buttons-search">
-                       <button onClick={() => { this.previousPage(); this.scrollToTop(); }} style={{ marginRight: '20px' }}  className="previous" id="previous">
-                           <svg style={{ width: '20px', fill: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 128L192 256l128 128z" /></svg>
-                           Previous
-                        </button>
-                       <button onClick={() => { this.nextPage(); this.scrollToTop();}} className="next-search" id="next-search">
-                           Next
-                           <svg style={{ width: '20px', fill: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M192 128l128 128-128 128z" /></svg>
-                        </button>
-                   </div>  
+                   {movies.length ? (
+                        <div className="buttons-search" id="buttons-search">
+                            <button onClick={() => { this.previousPage(); this.scrollToTop(); }} style={{ marginRight: '20px' }}  className="previous" id="previous">
+                            <svg style={{ width: '20px', fill: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 128L192 256l128 128z" /></svg>
+                            Previous
+                            </button>
+                            <button onClick={() => { this.nextPage(); this.scrollToTop();}} className="next-search" id="next-search">
+                                Next
+                                <svg style={{ width: '20px', fill: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M192 128l128 128-128 128z" /></svg>
+                            </button>
+                        </div>) 
+                        : null
+                    } 
             </div>
-            <footer id="search-fiedl-footer" className="footer">
-                  <div className="footer--info">
-                  © 2019 Alexander Govea. All rights reserved. <br />
-                  Designed and built using data provided by TMDb.
-                  </div>
-                  <div className="footer--info__socialmedia">
-                     <a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"><i class="github icon "></i></a>
-                     <a href="https://www.linkedin.com/in/alexander-govea-735774107/" target="_blank"><i class="linkedin icon justify"></i></a>
-                     <a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"><i class="twitter icon justify"></i></a>
-                     <a href="mailto:alexander_alatorre1993@hotmail.com"><i class="envelope outline icon justify"></i></a>
-                  </div>
-            </footer>
+            {movies.length ? (
+                <footer id="search-fiedl-footer" className="footer">
+                    <div className="footer--info">
+                    © 2019 Alexander Govea. All rights reserved. <br />
+                    Designed and built using data provided by TMDb.
+                    </div>
+                    <div className="footer--info__socialmedia">
+                        <a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"><i class="github icon "></i></a>
+                        <a href="https://www.linkedin.com/in/alexander-govea-735774107/" target="_blank"><i class="linkedin icon justify"></i></a>
+                        <a href="https://github.com/AlexanderAlatorreGovea/MovieTheaterProject" target="_blank"><i class="twitter icon justify"></i></a>
+                        <a href="mailto:alexander_alatorre1993@hotmail.com"><i class="envelope outline icon justify"></i></a>
+                    </div>
+                </footer>)
+                   : null
+               } 
         </div>
        );
    }

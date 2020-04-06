@@ -32,9 +32,7 @@ class MovieDetails extends React.Component {
      
     handleCloseModal = () => this.setState({showModal: false})
 
-    
-
-    componentWillMount() {
+    componentDidMount() {
         const  movieId = this.props.match.params
         const MovieDetailsConfig = this.props.location.state
         const imgURL = this.props.location.state.imgURL
