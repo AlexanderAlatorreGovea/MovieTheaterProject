@@ -1,0 +1,36 @@
+@import '../../styles/_variables.scss';
+
+
+.MovieList{
+    margin-top: 9.3rem;
+    .searchField-title{
+        color: $titleColor;
+        padding-left: 2rem;
+        font-family: $secondary-font;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+      }
+    .MovieList-Wrapper{
+        padding: 2.5rem 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        background: #141414;
+    }    
+}
+
+
+/*******************MEDIA QUERIES*******************************/
+
+@media (min-width: 1200px){
+    .MovieList-Wrapper {
+        padding: 5rem;
+    }
+}
+
+@media (min-width: 640px){
+    .MovieList-Wrapper {
+        padding: 3rem 0.5rem;
+        padding-left: 1.7rem;
+    }
+}
+

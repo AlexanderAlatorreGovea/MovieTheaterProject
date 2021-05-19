@@ -1,0 +1,20 @@
+.PeopleCarrousel{
+    .people__carousel--title{
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.people__info--image {
+    opacity: 1 !important;
+}
+    
+.slick-dots {
+    visibility: hidden;
+}
+
+.left--arrow__people,
+.right--arrow__people{
+    position: absolute;
+    top: 34%;
+}
