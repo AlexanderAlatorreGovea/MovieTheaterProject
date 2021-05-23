@@ -154,7 +154,7 @@ class RelatedCarrousel extends React.Component {
                         dataSet={index}
                         className="people__info--image"
                         style={{ opacity: "1", cursor: "pointer" }}
-                        src={`https:/image.tmdb.org/t/p/w370_and_h556_bestv2${
+                        src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${
                           movie.poster_path
                             ? movie.poster_path
                             : "fMDFeVf0pjopTJbyRSLFwNDm8Wr.jpg"
