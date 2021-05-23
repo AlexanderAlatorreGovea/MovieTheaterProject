@@ -1,10 +1,11 @@
 import React from "react";
 import PeopleModal from "../PeopleModal/PeopleModal";
-import "./PeopleCarrousel.scss";
 
 import { apiKey, baseUrl } from "../../apis/apiKey";
 import axios from "axios";
 import Slider from "react-slick";
+
+import "./PeopleCarrousel.scss";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -136,22 +137,22 @@ class PeopleCarrousel extends React.Component {
         },
       ],
     };
+    const state = this.state;
     return (
       <div className="PeopleCarrousel" style={{ background: "white" }}>
         <h1 className="people__carousel--title">Cast</h1>
         <Slider {...settings}>
-          {this.state.people.map((person, index) => {
+          {state.people.map((person, index) => {
             if (index <= 10) {
               return (
                 <div key={index}>
                   <div className="people__info">
-                    {" "}
                     <img
                       dataSet={index}
                       onClick={this.showModal.bind(null, person)}
                       className="people__info--image"
                       style={{ opacity: "1", cursor: "pointer" }}
-                      src={`https:/image.tmdb.org/t/p/w370_and_h556_bestv2${
+                      src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${
                         person.profile_path
                           ? person.profile_path
                           : "fMDFeVf0pjopTJbyRSLFwNDm8Wr.jpg"
@@ -170,27 +171,27 @@ class PeopleCarrousel extends React.Component {
             }
           })}
         </Slider>
-        {this.state.openModal && (
+        {state.openModal && (
           <PeopleModal
             time={this.props.time}
             props={this.props}
-            localState={this.state}
+            localState={state}
             backDrop={this.props.backDrop}
             id={
-              this.state.modalId
-                ? this.state.modalId
+              state.modalId
+                ? state.modalId
                 : "5a7aaa950e0a26020c003ea3"
             }
             onClose={this.closeModal}
             personImage={
-              this.state.personImage
-                ? this.state.personImage
+              state.personImage
+                ? state.personImage
                 : "/hYSoo0SAwr5vfh0jHU82JdBmP6V.jpg"
             }
-            img={this.state.profile_path}
-            name={this.state.name ? this.state.name : "Chris Geere"}
+            img={state.profile_path}
+            name={state.name ? state.name : "Chris Geere"}
             character={
-              this.state.character ? this.state.character : "Roger Clifford"
+              state.character ? state.character : "Roger Clifford"
             }
             overview={this.props.overview}
           />

@@ -1,5 +1,4 @@
 import React from "react";
-import "./MovieDetails.scss";
 import { apiKey, baseUrl } from "../../apis/apiKey";
 
 import axios from "axios";
@@ -8,6 +7,8 @@ import VideoModal from "../VideoModal/VideoModal";
 import Footer from "../Footer/Footer";
 import Preloader from "../Preloader/Preloader";
 import RelatedCarrousel from "../RelatedCarrousel/RelatedCarrousel";
+
+import "./MovieDetails.scss";
 
 class MovieDetails extends React.Component {
   constructor(props) {
@@ -27,15 +28,6 @@ class MovieDetails extends React.Component {
   handleShowModal = () => this.setState({ showModal: true });
 
   handleCloseModal = () => this.setState({ showModal: false });
-
-  // // componentWillMount() {
-  // //   const movieId = this.props.match.params;
-  // //   const MovieDetailsConfig = this.props.location.state;
-  // //   const imgURL = this.props.location.state.imgURL;
-  // //   const movie = this.props.location.state.movie;
-  // //   console.log('state', this.props.location.state)
-  // //   this.getItems();
-  // // }
 
   getItems = () => {
     const webCurrentParams = Number(
@@ -58,6 +50,10 @@ class MovieDetails extends React.Component {
         });
       });
   };
+
+   componentDidMount() {
+    this.getItems();
+   }
 
   format = (n) => {
     let num = this.state.additionalDetails.runtime;
@@ -106,7 +102,7 @@ class MovieDetails extends React.Component {
     const movieGenres = this.state.details;
     const movieRatings = Math.round(MovieDetailsConfig.movie.popularity);
     this.setRating(MovieDetailsConfig.movie.vote_average);
-    this.getItems();
+    
     return (
       <div className="MovieDetails" style={{ background: "white" }}>
         <Preloader />

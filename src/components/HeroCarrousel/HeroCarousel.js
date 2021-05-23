@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 
-import "./HeroCarousel.scss";
 import { connect } from "react-redux";
 import { fetchNowplayingMovies } from "../../actions/index";
 
@@ -10,6 +9,8 @@ import Upcoming from "../Upcoming/Upcoming";
 import PopularCarousel from "../PopularCarousel/PopularCarousel";
 import TopRated from "../TopRated/TopRated";
 import Footer from "../Footer/Footer";
+
+import "./HeroCarousel.scss";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -32,7 +33,6 @@ function SampleNextArrow(props) {
         viewBox="0 0 24 24"
       >
         <path
-
           fill="none"
           stroke="#fff"
           stroke-width="1.5"
@@ -82,7 +82,7 @@ class HeroCarousel extends React.Component {
   }
 
   componentDidMount() {
-     this.props.fetchNowplayingMovies()
+    this.props.fetchNowplayingMovies();
   }
 
   render() {
@@ -127,7 +127,7 @@ class HeroCarousel extends React.Component {
       ],
     };
     const imgURL = "http://image.tmdb.org/t/p/";
-   
+
     return (
       <div>
         <section className="slider-divider">

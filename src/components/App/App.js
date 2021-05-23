@@ -1,4 +1,11 @@
 import React from "react";
+
+import {
+  Route,
+  Link,
+  BrowserRouter as Router,
+} from "react-router-dom";
+
 import Home from "../Home/Home.js";
 import SearchField from "../SearchField/SearchField";
 import MovieDetails from "../MovieDetails/MovieDetails";
@@ -6,16 +13,9 @@ import PeopleModal from "../PeopleModal/PeopleModal";
 import SignIn from "../SignIn/SignIn";
 import MovieDetailsDefault from "../MovieDetailsDefault/MovieDetailsDefault";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
-import "./App.scss";
 
-import {
-  Route,
-  Link,
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
-} from "react-router-dom";
-import axios from "axios";
+
+import "./App.scss";
 
 class App extends React.Component {
   constructor(props) {
@@ -136,16 +136,23 @@ class App extends React.Component {
                   state: { displaySingIn: this.state.displaySingIn },
                 }}
               >
-                <i style={{ color: this.state.idx === 1 ? "#2196f3" : "white" }} className="big white film icon"></i>{" "}
+                <i
+                  style={{ color: this.state.idx === 1 ? "#2196f3" : "white" }}
+                  className="big white film icon"
+                ></i>{" "}
               </Link>
             </li>
-            <li className="main-nav__icon" 
-            onClick={() => {
-              this.toggleSearchBar();
-              this.switchColor(3);
-            }}
+            <li
+              className="main-nav__icon"
+              onClick={() => {
+                this.toggleSearchBar();
+                this.switchColor(3);
+              }}
             >
-              <i style={{ color: this.state.idx === 3 ? "#2196f3" : "white" }} className="big white search icon"></i>
+              <i
+                style={{ color: this.state.idx === 3 ? "#2196f3" : "white" }}
+                className="big white search icon"
+              ></i>
             </li>
             <li className="main-nav__icon">
               <Link
@@ -155,7 +162,10 @@ class App extends React.Component {
                 }}
                 to="/SignIn"
               >
-                <i style={{ color: this.state.idx === 2 ? "#2196f3" : "white" }} className="big white users icon"></i>
+                <i
+                  style={{ color: this.state.idx === 2 ? "#2196f3" : "white" }}
+                  className="big white users icon"
+                ></i>
               </Link>
             </li>
           </ul>

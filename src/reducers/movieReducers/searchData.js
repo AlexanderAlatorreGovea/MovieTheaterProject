@@ -1,15 +1,15 @@
-import { SEARCH_DATA } from '../../actions/types';
+import { SEARCH_DATA } from "../../actions/types";
 
 const initialState = {
-  results: []
+  results: [],
 };
 
 const searchData = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case SEARCH_DATA:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
     default:
       return state;

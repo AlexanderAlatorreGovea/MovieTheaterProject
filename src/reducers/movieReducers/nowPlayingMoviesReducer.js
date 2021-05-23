@@ -1,4 +1,3 @@
-//import { FETCH_NOWPLAYING_MOVIES } from '/Users/test/movietheaterprojectmaster/src/actions/types.js';
 import { FETCH_NOWPLAYING_MOVIES } from '../../actions/types';
 
 export default ( state = [], action) => {

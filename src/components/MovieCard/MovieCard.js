@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./MovieCard.scss";
 
 const MovieList = (props) => {
@@ -8,9 +9,9 @@ const MovieList = (props) => {
       ? str
       : strArr.filter((word, i) => i < length).join(" ") + "...";
   }
-  
+
   return (
-    <div className="MovieCard" style={{ margin: "0", padding: "0" }}>
+    <div className="MovieCard">
       <div className="MovieCard__container">
         {props.image == null ? (
           <div className="MovieCard--wrapper">
@@ -33,12 +34,11 @@ const MovieList = (props) => {
         ) : (
           <div className="MovieCard--wrapper alternative-image">
             {" "}
-              <img
-                className="searched-image"
-                src={`http://image.tmdb.org/t/p/w342${props.image}`}
-                style={{ width: "100%", height: "100%" }}
-              />
-           
+            <img
+              className="searched-image"
+              src={`http://image.tmdb.org/t/p/w342${props.image}`}
+              style={{ width: "100%", height: "100%" }}
+            />
           </div>
         )}
       </div>

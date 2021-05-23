@@ -86,6 +86,11 @@
         transition: transform 80ms ease-in;
         display: block;
         cursor: pointer;
+        white-space: nowrap;
+        @media screen  and (max-width: 425px) {
+            padding: 13px 32%;
+            margin-top: 7px;
+        }
         &:active {
             transform: scale(0.95);
         }
@@ -134,6 +139,9 @@
         padding: 0 50px;
         height: 100%;
         text-align: center;
+        @media screen  and (max-width: 425px) {
+            padding: 0 20px;
+        }
     }
     .form-container {
         position: absolute;
@@ -206,6 +214,9 @@
         width: 50%;
         transform: translateX(0);
         transition: transform 0.6s ease-in-out;
+        @media screen  and (max-width: 425px) {
+            padding: 0 20px;
+        }
     }
     
     .overlay-left {
@@ -236,6 +247,10 @@
             margin-bottom: 7rem;
         }
     }
+}
+
+#signIn {
+    white-space: nowrap;
 }
 
 

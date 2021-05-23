@@ -1,56 +1,57 @@
 //font imports
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Rozha+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Rozha+One&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
 
 @font-face {
-    font-family: road_rage;
-    src: url('/fonts/Road_Rage.otf')
+  font-family: road_rage;
+  src: url("/fonts/Road_Rage.otf");
 }
-
 
 // font families
 
+$primary-font: "Roboto", sans-serif;
 
-$primary-font: 'Roboto', sans-serif;
+$secondary-font: "Lato", sans-serif;
 
-$secondary-font: 'Lato', sans-serif;
+$tertiary-font: "Alegreya Sans", sans-serif;
 
-$tertiary-font: 'Alegreya Sans', sans-serif;
+$textFont: "Roboto Condensed", sans-serif;
 
-$textFont:  'Roboto Condensed', sans-serif;
+$headerFont: "Roboto", sans-serif;
 
-$headerFont: 'Roboto', sans-serif;
+$displayFont: "Open Sans Condensed", sans-serif;
 
-$displayFont: 'Open Sans Condensed', sans-serif;
+$regulaSans: "Open Sans", sans-serif;
 
-$regulaSans: 'Open Sans', sans-serif;
-
-$rozhaFont: 'Rozha One', serif;
-
+$rozhaFont: "Rozha One", serif;
 
 // colors
-$primary-color: linear-gradient(165deg, rgba(37,20,49,1) 0%, rgba(22,17,48,1) 22%);
+$primary-color: linear-gradient(
+  165deg,
+  rgba(37, 20, 49, 1) 0%,
+  rgba(22, 17, 48, 1) 22%
+);
 
-$secondary-color: #EB4E7A;
+$secondary-color: #eb4e7a;
 
-$tertiary-color: #1C262B;
+$tertiary-color: #1c262b;
 
 $primary-font-color: #fff;
 
-$secondary-font-color: rgba(255, 255, 255, .9);
+$secondary-font-color: rgba(255, 255, 255, 0.9);
 
-$titleColor: #AAAAAA;
+$titleColor: #aaaaaa;
 
-$paragraphColor: #ADADAD;
+$paragraphColor: #adadad;
 
-$footerBG: #131A22;
+$footerBG: #131a22;
 
 $black: #202020;
 
-$red: #911A20;
+$red: #911a20;
 
-$green: #4D6010;
+$green: #4d6010;
 
-$greyBG: #F7F7F7;
+$greyBG: #f7f7f7;

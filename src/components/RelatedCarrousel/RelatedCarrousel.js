@@ -125,12 +125,16 @@ class RelatedCarrousel extends React.Component {
       ],
     };
     const imgURL = "http://image.tmdb.org/t/p/";
-
+    const state = this.state;
     return (
-      <div onClick={() => window.location.reload()} className="PeopleCarrousel" style={{ background: "white" }}>
+      <div
+        onClick={() => window.location.reload()}
+        className="PeopleCarrousel"
+        style={{ background: "white", paddingTop: "25px" }}
+      >
         <h1 className="people__carousel--title">Related Movies</h1>
         <Slider {...settings}>
-          {this.state.relatedMovies.map((movie, index) => {
+          {state.relatedMovies.map((movie, index) => {
             if (index <= 10) {
               return (
                 <div key={index}>

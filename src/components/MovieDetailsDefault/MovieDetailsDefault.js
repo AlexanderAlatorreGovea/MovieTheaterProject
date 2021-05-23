@@ -1,14 +1,11 @@
 import React from "react";
-import {
-  apiKey,
-  baseUrl
-} from "../../apis/apiKey";
+import { apiKey, baseUrl } from "../../apis/apiKey";
 
 import axios from "axios";
 import PeopleCarrousel from "../PeopleCarrousel/PeopleCarrousel";
 import VideoModal from "../VideoModal/VideoModal";
 import Footer from "../Footer/Footer";
-import RelatedCarrousel from '../RelatedCarrousel/RelatedCarrousel';
+import RelatedCarrousel from "../RelatedCarrousel/RelatedCarrousel";
 import Preloader from "../Preloader/Preloader";
 
 class MovieDetailsDefault extends React.Component {
@@ -83,7 +80,6 @@ class MovieDetailsDefault extends React.Component {
     const ratings = this.state.rating;
     const movieGenres = this.state.details;
     const movieRatings = Math.round(this.state.popularity);
-    //const MovieDetailsConfig = this.props.location.state
     this.setRating(this.state.vote);
 
     return (
@@ -139,7 +135,7 @@ class MovieDetailsDefault extends React.Component {
                         this.state.additionalDetails.release_date
                       ).getFullYear()}
                     </span>
-                    <span className="break">{this.format()}</span>{" "}
+                    <span className="break">{this.format()}</span>
                   </div>
                   {this.handlePopularity}
 
@@ -184,10 +180,8 @@ class MovieDetailsDefault extends React.Component {
                       {movieRatings} likes
                     </span>
                   </div>
-                </div>{" "}
-                {/* <!-- end details -->    */}
-              </div>{" "}
-              {/* <!-- end hero -->      */}
+                </div>
+              </div>
               <div className="description">
                 <div className="column1">
                   <span className="tag">
@@ -197,21 +191,18 @@ class MovieDetailsDefault extends React.Component {
                     {movieGenres[1] && movieGenres[1].name}
                   </span>
                   <span className="tag">
-                    {movieGenres[3] ? movieGenres[3].name : "Thriller"}
+                    {movieGenres[3] ? movieGenres[2].name : "Thriller"}
                   </span>
-                </div>{" "}
-                {/* <!-- end column1 -->      */}
+                </div>
                 <div className="column2">
                   <p>
                     {`${this.state.overview}`}
                     <span style={{ paddingLeft: "4px" }}></span>{" "}
                     <a>read more...</a>
                   </p>
-                  <div className="avatars"></div>{" "}
-                  {/* <!-- end avatars -->      */}
+                  <div className="avatars"></div>
                   <span className="qB1pae"></span>
-                </div>{" "}
-                {/* <!-- end column2 -->   */}
+                </div>
                 <section className="production__info--section">
                   <div className="production__info">
                     <div className="production__info--wrapper">
@@ -225,7 +216,6 @@ class MovieDetailsDefault extends React.Component {
                         </div>
                         <div className="info__left--data">
                           <span>
-                            {" "}
                             {new Date(
                               this.state.additionalDetails.release_date
                             ).getFullYear()}
@@ -305,19 +295,18 @@ class MovieDetailsDefault extends React.Component {
                     movie_id={301528}
                   />
 
-                  <RelatedCarrousel 
-                      time={this.format()}
-                      backDrop={this.state.posters.file_path}
-                      movie_id={301528}
+                  <RelatedCarrousel
+                    time={this.format()}
+                    backDrop={this.state.posters.file_path}
+                    movie_id={301528}
                   />
                 </div>
-              </div>{" "}
-              {/* <!-- end description -->      */}
-            </div>{" "}
+              </div>
+            </div>
             {/*  <!-- end container -->     */}
             {/* begining of secondary section */}
           </div>
-        </div>{" "}
+        </div>
         {/* <!-- end movie-card -->      */}
       </div>
     );

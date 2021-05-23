@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import axios from "axios";
 
 import "./PeopleModal.scss";
@@ -88,10 +87,10 @@ class PeopleModal extends React.Component {
           width="15"
           height="15"
           viewBox="0 0 15 15"
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: "pointer" }}
         >
           <g
-            style={{cursor: 'pointer'}}
+            style={{ cursor: "pointer" }}
             fill="none"
             stroke="#fff"
             stroke-linecap="round"

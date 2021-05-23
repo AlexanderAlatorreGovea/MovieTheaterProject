@@ -1,21 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-import App from './components/App/App';
-//import reducers from '/Users/test/movietheaterprojectmaster/src/reducers/index.js'
-import reducers from '../src/reducers/index'
+import App from "./components/App/App";
+import reducers from "../src/reducers/index";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <Provider store={ store }>
-        <App /> 
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );
-
-

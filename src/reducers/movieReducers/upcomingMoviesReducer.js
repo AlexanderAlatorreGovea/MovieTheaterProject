@@ -1,12 +1,10 @@
-//import { FETCH_UPCOMING_MOVIES } from '/Users/test/movietheaterprojectmaster/src/actions/types.js';
-import { FETCH_UPCOMING_MOVIES } from '../../actions/types';
+import { FETCH_UPCOMING_MOVIES } from "../../actions/types";
 
-export default ( state = [], action) => {
-    switch(action.type) {
-        case FETCH_UPCOMING_MOVIES:
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
+export default (state = [], action) => {
+  switch (action.type) {
+    case FETCH_UPCOMING_MOVIES:
+      return action.payload;
+    default:
+      return state;
+  }
+};
